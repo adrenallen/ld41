@@ -7,9 +7,15 @@ extends Node2D
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	$TileMap.set_cell(0,0,$TileMap.tile_set.find_tile_by_name("redtile"))
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+#	$TileMap.set_cell(0,0,$TileMap.tile_set.find_tile_by_name("redtile"))
+	print(check_for_win_condition())
+	
+#Check if our player's tile map matches victory conditions
+func check_for_win_condition():
+	for cell in $VictoryTileMap.get_used_cells():
+		if $ActiveTileMap.get_cell(cell[0], cell[1])  != $VictoryTileMap.get_cell(cell[0], cell[1]):
+			return false
+			
+	return true;
+		
+		
