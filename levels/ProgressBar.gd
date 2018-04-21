@@ -6,7 +6,7 @@ func _ready():
 	
 	playerNode = get_tree().get_nodes_in_group("player")[0]
 	
-	max_value = playerNode.health
+	max_value = global.maxPlayerHealth
 	min_value = 0
 	value = playerNode.health
 	

@@ -1,7 +1,6 @@
 extends Node2D
 
 var victoryDoorOpen = false
-var nextLevel = "level1"
 
 onready var enemy1 = preload("res://characters/Enemy1.tscn")
 onready var clawer = preload("res://characters/Clawer.tscn")
@@ -15,6 +14,9 @@ func _ready():
 	set_process(true)
 	build_hint_tile_map()
 	
+	# TODO - make this more like an AI director
+	get_owner().get_node("SpawnTimer").connect("timeout", self, "spawn_base_enemy")
+	
 	
 #builds the hint tile map so playuer knows where to put colors
 func build_hint_tile_map():
@@ -23,6 +25,8 @@ func build_hint_tile_map():
 		$HintTileMap.set_cell(cell.x, cell.y, $HintTileMap.tile_set.find_tile_by_name($HintTileMap.tile_set.tile_get_name($VictoryTileMap.get_cell(cell[0], cell[1])) + "hint"))
 	
 func next_level(binds):
+	global.playerHealth = get_tree().get_nodes_in_group("player")[0].health
+	var nextLevel = get_owner().get_node("NextLevel").nextLevel
 	global.goto_scene("res://levels/"+nextLevel+".tscn")
 	
 func _process(delta):

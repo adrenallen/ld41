@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://levels/level2.gd" type="Script" id=1]
+[ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://characters/Clawer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://characters/Scorpion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/Scorpion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/Clawer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/ProgressBar.gd" type="Script" id=7]
+[ext_resource path="res://levels/NextLevel.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -42,7 +44,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 327686, 2, 0, 327689, 1, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="WhiteTileMap" type="TileMap" parent="TileMapContainer" index="1"]
@@ -134,9 +136,11 @@ shape = SubResource( 1 )
 
 [node name="Characters" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="KinematicBody2D" parent="Characters" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 507.056, 321.667 )
+position = Vector2( 520.561, 535.293 )
 
 [node name="Walls" type="Node2D" parent="." index="2"]
 
@@ -243,14 +247,90 @@ shape = SubResource( 2 )
 
 [node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 182, 268 )
+position = Vector2( 517.097, 118.56 )
 
-[node name="KinematicBody2D4" parent="Enemies" index="1" instance=ExtResource( 5 )]
+[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 850.416, 143.645 )
+position = Vector2( 183.934, 124.67 )
 
-[node name="KinematicBody2D2" parent="Enemies" index="2" instance=ExtResource( 6 )]
+[node name="KinematicBody2D3" parent="Enemies" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 854.294, 414.404 )
+position = Vector2( 834.535, 128.532 )
+
+[node name="Spawns" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="Position2D" type="Position2D" parent="Spawns" index="0" groups=[
+"spawn",
+]]
+
+position = Vector2( 85.9856, 70.1376 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D3" type="Position2D" parent="Spawns" index="1" groups=[
+"spawn",
+]]
+
+position = Vector2( 929.441, 73.8208 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D4" type="Position2D" parent="Spawns" index="2" groups=[
+"spawn",
+]]
+
+position = Vector2( 925.758, 555.094 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D2" type="Position2D" parent="Spawns" index="3" groups=[
+"spawn",
+]]
+
+position = Vector2( 88.441, 555.094 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="UI" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
+
+[node name="ProgressBar" type="ProgressBar" parent="UI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 762.0
+margin_top = 18.0
+margin_right = 953.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = true
+percent_visible = true
+script = ExtResource( 7 )
+_sections_unfolded = [ "Material", "Percent", "Theme", "Visibility" ]
+
+[node name="SpawnTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[node name="NextLevel" type="Node" parent="." index="7"]
+
+script = ExtResource( 8 )
+_sections_unfolded = [ "Pause" ]
+nextLevel = "level2"
 
 

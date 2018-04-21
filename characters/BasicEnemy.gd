@@ -77,5 +77,5 @@ func do_attack_damage():
 		if(hitBox.get_owner().is_in_group("player")):
 			var enemy = hitBox.get_owner()
 			enemy.take_damage(damage)
-			enemy.take_knockback(Vector2(knockback, knockback) * velocity.normalized())
+#			enemy.take_knockback(Vector2(knockback, knockback) * velocity.normalized())
 	

@@ -3,8 +3,12 @@ extends Node
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var playerHealth
+var maxPlayerHealth = 100
 
 func _ready():
+	if playerHealth == null :
+		playerHealth = maxPlayerHealth
 	pass
 
 func goto_scene(scene):

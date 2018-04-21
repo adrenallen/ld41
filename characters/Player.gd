@@ -8,6 +8,7 @@ func _ready():
 	maxMoveSpeed = 300
 	damage = 50
 	knockback = 15
+	health = global.playerHealth
 	set_process(true)
 	set_physics_process(true)
 
@@ -64,10 +65,10 @@ func do_attack_damage():
 			var enemy = hitBox.get_owner()
 			enemy.take_damage(damage)
 			print(enemy, " took damage of ", damage)
-#			if($Sprite.flip_h):
-#				enemy.take_knockback(Vector2(-knockback, 0))
-#			else:
-#				enemy.take_knockback(Vector2(knockback, 0))
+			if(isFlippedH):
+				enemy.take_knockback(Vector2(-knockback, 0))
+			else:
+				enemy.take_knockback(Vector2(knockback, 0))
 
 func start_clean_tile():
 	velocity = Vector2(0,0)

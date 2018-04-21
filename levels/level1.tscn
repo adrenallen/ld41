@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/ProgressBar.gd" type="Script" id=5]
+[ext_resource path="res://levels/NextLevel.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -41,7 +42,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 327685, 2, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="WhiteTileMap" type="TileMap" parent="TileMapContainer" index="1"]
@@ -137,7 +138,7 @@ editor/display_folded = true
 
 [node name="KinematicBody2D" parent="Characters" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 507.056, 321.667 )
+position = Vector2( 520.561, 535.293 )
 
 [node name="Walls" type="Node2D" parent="." index="2"]
 
@@ -246,19 +247,19 @@ editor/display_folded = true
 
 [node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 182, 268 )
+position = Vector2( 209.01, 113.305 )
 
 [node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 194.188, 412.044 )
+position = Vector2( 359.933, 97.7431 )
 
 [node name="KinematicBody2D3" parent="Enemies" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 799.175, 372.155 )
+position = Vector2( 584.321, 116.786 )
 
 [node name="KinematicBody2D4" parent="Enemies" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 823.551, 195.978 )
+position = Vector2( 880.027, 132.136 )
 
 [node name="Spawns" type="Node2D" parent="." index="4"]
 
@@ -268,7 +269,28 @@ editor/display_folded = true
 "spawn",
 ]]
 
-position = Vector2( 116.679, 100.831 )
+position = Vector2( 85.9856, 70.1376 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D3" type="Position2D" parent="Spawns" index="1" groups=[
+"spawn",
+]]
+
+position = Vector2( 929.441, 73.8208 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D4" type="Position2D" parent="Spawns" index="2" groups=[
+"spawn",
+]]
+
+position = Vector2( 925.758, 555.094 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D2" type="Position2D" parent="Spawns" index="3" groups=[
+"spawn",
+]]
+
+position = Vector2( 88.441, 555.094 )
 scale = Vector2( 1.5205, 1 )
 
 [node name="UI" type="Node2D" parent="." index="5"]
@@ -305,8 +327,14 @@ _sections_unfolded = [ "Material", "Percent", "Theme", "Visibility" ]
 [node name="SpawnTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 3.0
 one_shot = false
 autostart = true
+
+[node name="NextLevel" type="Node" parent="." index="7"]
+
+script = ExtResource( 6 )
+_sections_unfolded = [ "Pause" ]
+nextLevel = "level2"
 
 
