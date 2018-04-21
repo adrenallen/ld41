@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/redtile.png-bcff355097c62e9fd8f1d77eadb7f3ad.stex"
+path="res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex"
 
 [deps]
 
-source_file="res://tiles/redtile.png"
-source_md5="cd9d2de116f6a7799c434aec5a86ec7a"
+source_file="res://characters/player.png"
+source_md5="1259f70f96882b6df0cd3d2923a556a0"
 
-dest_files=[ "res://.import/redtile.png-bcff355097c62e9fd8f1d77eadb7f3ad.stex" ]
-dest_md5="1bcb92f86040b63cde885b5da47399e3"
+dest_files=[ "res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex" ]
+dest_md5="ae1918ac92cefd9b5d4377602c15a81a"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

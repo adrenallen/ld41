@@ -7,10 +7,10 @@ path="res://.import/whitetile.png-c80ac01f03021b00db36c8ed8f10aa63.stex"
 [deps]
 
 source_file="res://tiles/whitetile.png"
-source_md5="defb37a98a7653f7e95d78a7e71f1d8a"
+source_md5="43bcadf07cfe47cc499cc28c4730e782"
 
 dest_files=[ "res://.import/whitetile.png-c80ac01f03021b00db36c8ed8f10aa63.stex" ]
-dest_md5="6205fd0b7fdaf950c7e6b57fca523be2"
+dest_md5="ecd7143845d101423ff34596960fc3d7"
 
 [params]
 

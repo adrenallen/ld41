@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/redtile.png-bcff355097c62e9fd8f1d77eadb7f3ad.stex"
+path="res://.import/greentile.png-ae63bdac9a2a4a162b3e86a1a70a6f9c.stex"
 
 [deps]
 
-source_file="res://tiles/redtile.png"
-source_md5="cd9d2de116f6a7799c434aec5a86ec7a"
+source_file="res://tiles/greentile.png"
+source_md5="9abd39f509d9a2a8c22de4f33f1b5ecd"
 
-dest_files=[ "res://.import/redtile.png-bcff355097c62e9fd8f1d77eadb7f3ad.stex" ]
-dest_md5="1bcb92f86040b63cde885b5da47399e3"
+dest_files=[ "res://.import/greentile.png-ae63bdac9a2a4a162b3e86a1a70a6f9c.stex" ]
+dest_md5="ea16d9f80713eebba7501d982ff96cde"
 
 [params]
 

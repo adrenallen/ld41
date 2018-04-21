@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tiles/whitetile.png" type="Texture" id=1]
 [ext_resource path="res://tiles/redtile.png" type="Texture" id=2]
+[ext_resource path="res://tiles/greentile.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,5 +14,10 @@ texture = ExtResource( 1 )
 
 position = Vector2( 186.414, 23.3633 )
 texture = ExtResource( 2 )
+
+[node name="greentile" type="Sprite" parent="." index="2"]
+
+position = Vector2( 290.42, 142.443 )
+texture = ExtResource( 3 )
 
 
