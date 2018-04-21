@@ -1,7 +1,7 @@
 extends "BasicEnemy.gd"
 
 var targetCell
-
+var colorsSucked = []
 
 func _ready():
 	bloodColor = "blue"
@@ -35,7 +35,11 @@ func _physics_process(delta):
 func finish_sucking(binds=null):
 	isSucking = false
 	var mapPos = get_position_on_map()
-	global.get_tile_map_container(self).clear_tile(mapPos.x, mapPos.y)
+	var tileMapObj = global.get_tile_map_container(self)
 	
+	#this is stupid syntax for an array
+	colorsSucked.push_front (tileMapObj.get_cell_tile_index_by_game_coords(mapPos.x, mapPos.y))
 	
-		
+	tileMapObj.clear_tile(mapPos.x, mapPos.y)
+
+

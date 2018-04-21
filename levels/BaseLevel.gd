@@ -57,6 +57,14 @@ func check_for_win_condition():
 			
 	return true;
 
+func get_cell_tile_index_by_game_coords(x,y):
+	var mapCoords = get_tile_coords_by_game_coords(x,y)
+	return get_cell_tile_index(mapCoords.x, mapCoords.y)
+
+# this is expecting tilemap coords not game coords
+func get_cell_tile_index(tileMapX,tileMapY):
+	return $ActiveTileMap.get_cellv(Vector2(tileMapX,tileMapY))
+
 # x and y are map positions not game position
 func find_closest_used_tile(x, y):
 	var positionVector = Vector2(x,y)
