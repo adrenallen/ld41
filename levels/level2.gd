@@ -1,14 +1,10 @@
 extends Node2D
 
 var victoryDoorOpen = false
-var nextLevel = "level2"
+var nextLevel = "level3"
 
 func _ready():
-	
-#	$TileMap.set_cell(0,0,$TileMap.tile_set.find_tile_by_name("redtile"))
 	set_process(true)
-	
-	
 	
 func next_level(binds):
 	global.goto_scene("res://levels/"+nextLevel+".tscn")
