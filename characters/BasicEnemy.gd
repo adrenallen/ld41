@@ -22,23 +22,19 @@ func _process(delta):
 			$Sprite.flip_h = true
 	
 func move_character():
-		
-	#set a max speed for all directions
-	if(velocity.length() > maxMoveSpeed):
-		velocity = velocity.normalized()
-		velocity.x *= maxMoveSpeed
-		velocity.y *= maxMoveSpeed
-		
+
 	move_and_slide(velocity)
 
 func move_character_towards_player():
-	
-	var toPlayerVector = get_vector_to_player().normalized()
-	toPlayerVector.x *= moveSpeed
-	toPlayerVector.y *= moveSpeed
-	
-	#Add to existing velocity
-	velocity += toPlayerVector
+	if(velocity.length() < maxMoveSpeed):
+		var toPlayerVector = get_vector_to_player().normalized()
+		toPlayerVector.x *= moveSpeed
+		toPlayerVector.y *= moveSpeed
+		#Add to existing velocity
+		velocity += toPlayerVector
+	else:
+		velocity /= 10
+		
 	move_character()
 
 func find_player_position():

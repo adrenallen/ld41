@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex"
+path="res://.import/clawer.png-e0d1409da9af61cf21b5ad2ef8f9326d.stex"
 
 [deps]
 
-source_file="res://characters/player.png"
-source_md5="5575b9cb7f6db7dab02d93599d7e9734"
+source_file="res://characters/clawer.png"
+source_md5="87ee5db56d1259636ff30fc8c397c35d"
 
-dest_files=[ "res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex" ]
-dest_md5="0141126cd145161ab5d4cba968c20452"
+dest_files=[ "res://.import/clawer.png-e0d1409da9af61cf21b5ad2ef8f9326d.stex" ]
+dest_md5="312b3f7b75b6af368a3f0f58b1353d53"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

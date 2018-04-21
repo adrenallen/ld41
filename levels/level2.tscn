@@ -1,21 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/level2.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/Clawer.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.4085, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 12.4085, 10 )
-
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 [node name="TileMapContainer" type="Node2D" parent="." index="0"]
 
@@ -40,7 +41,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 2, 0, 327690, 2, 0, 327691, 2, 0, 393217, 1, 0, 393218, 1, 0, 393220, 1, 0, 393221, 2, 0, 393227, 2, 0, 458753, 1, 0, 458756, 1, 0, 458757, 2, 0, 458762, 2, 0, 458763, 2, 0, 524289, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524297, 2, 0, 524298, 2, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 2, 0, 589834, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0 )
+tile_data = PoolIntArray( 327686, 2, 0, 327689, 1, 0 )
 _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="WhiteTileMap" type="TileMap" parent="TileMapContainer" index="1"]
@@ -128,7 +129,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 31.2626, 149.933 )
 scale = Vector2( 6.92605, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Characters" type="Node2D" parent="." index="1"]
 
@@ -137,6 +138,8 @@ shape = SubResource( 2 )
 position = Vector2( 507.056, 321.667 )
 
 [node name="Walls" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="NorthWall" type="StaticBody2D" parent="Walls" index="0"]
 
@@ -153,7 +156,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 199.723, 14.1499 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="NorthWall2" type="StaticBody2D" parent="Walls" index="1"]
 
@@ -169,7 +172,7 @@ bounce = 0.0
 
 position = Vector2( 823.518, 14.2671 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="DoorWall" type="StaticBody2D" parent="Walls" index="2"]
 
@@ -185,7 +188,7 @@ bounce = 0.0
 
 position = Vector2( 513.038, 15.5939 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="SouthWall" type="StaticBody2D" parent="Walls" index="3"]
 
@@ -201,7 +204,7 @@ bounce = 0.0
 
 position = Vector2( 538.968, 609.749 )
 scale = Vector2( 41.5067, 3.3795 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="EastWall" type="StaticBody2D" parent="Walls" index="4"]
 
@@ -217,7 +220,7 @@ bounce = 0.0
 
 position = Vector2( 994.138, 300.103 )
 scale = Vector2( 2.79182, 27.3767 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="WestWall" type="StaticBody2D" parent="Walls" index="5"]
 
@@ -233,12 +236,24 @@ bounce = 0.0
 
 position = Vector2( 29.7075, 279.558 )
 scale = Vector2( 2.79182, 37.1453 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Enemies" type="Node2D" parent="." index="3"]
 
 [node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 182, 268 )
+
+[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 847.961, 481.273 )
+
+[node name="KinematicBody2D3" parent="Enemies" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 841.822, 325.35 )
+
+[node name="KinematicBody2D4" parent="Enemies" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 850.416, 143.645 )
 
 
