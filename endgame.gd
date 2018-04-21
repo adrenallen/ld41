@@ -11,6 +11,7 @@ func _ready():
 	
 	
 func start_over():
+	global.playerHealth = global.maxPlayerHealth
 	global.goto_scene("res://levels/level1.tscn")
 
 #func _process(delta):
