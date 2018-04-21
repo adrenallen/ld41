@@ -2,22 +2,19 @@ extends "BaseCharacter.gd"
 
 var isCleaning = false
 
+
 func _ready():
 	moveSpeed = 50
 	maxMoveSpeed = 300
 	damage = 50
+	knockback = 15
 	set_process(true)
 	set_physics_process(true)
 
 func _process(delta):
 	
 	#handle sprite flip by velocity
-	if(velocity.x > 0):
-		if($Sprite.flip_h):
-			$Sprite.flip_h = false
-	elif(velocity.x < 0):
-		if(!$Sprite.flip_h):
-			$Sprite.flip_h = true
+	flip_based_on_velocity()
 	
 	if(!isAttacking && !isCleaning):
 		if(velocity.length() > 6):
@@ -52,6 +49,7 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 	
 	if(Input.is_action_pressed("ui_accept") && !isAttacking):
+		print("Attacking")
 		attack()
 		
 	if(Input.is_action_pressed("player_clean") && !isCleaning && !isAttacking):
@@ -65,7 +63,11 @@ func do_attack_damage():
 		if(hitBox.get_owner().is_in_group("enemy")):
 			var enemy = hitBox.get_owner()
 			enemy.take_damage(damage)
-			enemy.take_knockback(Vector2(knockback, knockback) * velocity.normalized())
+			print(enemy, " took damage of ", damage)
+#			if($Sprite.flip_h):
+#				enemy.take_knockback(Vector2(-knockback, 0))
+#			else:
+#				enemy.take_knockback(Vector2(knockback, 0))
 
 func start_clean_tile():
 	velocity = Vector2(0,0)

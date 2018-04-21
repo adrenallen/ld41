@@ -3,6 +3,8 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+func _enter_tree():
+	global.clear_leftover_enemies()
 
 func _ready():
 	$Button.connect("button_down", self, "start_over", [], CONNECT_ONESHOT)

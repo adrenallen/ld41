@@ -17,12 +17,13 @@ func death():
 func _process(delta):
 	
 	#handle sprite flip by velocity
-	if(velocity.x > 0):
-		if($Sprite.flip_h):
-			$Sprite.flip_h = false
-	elif(velocity.x < 0):
-		if(!$Sprite.flip_h):
-			$Sprite.flip_h = true
+	flip_based_on_velocity()
+			
+	if(!isAttacking):
+		if(velocity.length() > 6):
+			global.play_animation_if_not_playing("run", $AnimationPlayer)
+		elif(velocity.length() <= 6):
+			global.play_animation_if_not_playing("idle", $AnimationPlayer)
 	
 func move_character():
 
@@ -50,8 +51,11 @@ func is_player_in_attack_box():
 
 #Finds the player position
 func find_player_position():
-	var player = get_tree().get_nodes_in_group("player")[0]
-	return player.position
+	var player = get_tree().get_nodes_in_group("player")
+	if(player.size() > 0):
+		return player[0].position
+		
+	return Vector2(0,0)
 
 #get the vector diff to player
 func get_vector_to_player():

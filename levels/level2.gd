@@ -2,7 +2,7 @@ extends "BaseLevel.gd"
 
 
 func _ready():
-	nextLevel = "level3"
+	nextLevel = "level1"
 	set_process(true)
 	
 	

@@ -273,6 +273,8 @@ scale = Vector2( 1.5205, 1 )
 
 [node name="UI" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
+
 [node name="ProgressBar" type="ProgressBar" parent="UI" index="0"]
 
 anchor_left = 0.0
@@ -299,5 +301,12 @@ rounded = true
 percent_visible = true
 script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Percent", "Theme", "Visibility" ]
+
+[node name="SpawnTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
 
 

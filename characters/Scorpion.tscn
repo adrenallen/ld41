@@ -22,6 +22,7 @@ radius = 13.1522
 height = 40.0457
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
+"red",
 "enemy",
 ]]
 

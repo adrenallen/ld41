@@ -73,8 +73,9 @@ custom_solver_bias = 0.0
 radius = 13.1522
 height = 40.0457
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
+[node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "enemy",
+"green",
 ]]
 
 input_pickable = false
@@ -143,8 +144,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0"]
 
-position = Vector2( 20.8703, 1.71711 )
-scale = Vector2( 2.82005, 1 )
+position = Vector2( 12.3621, 1.71711 )
+scale = Vector2( 2.2933, 1 )
 shape = SubResource( 3 )
 
 

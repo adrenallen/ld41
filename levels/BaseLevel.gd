@@ -4,10 +4,17 @@ var victoryDoorOpen = false
 var nextLevel = "level1"
 
 onready var enemy1 = preload("res://characters/Enemy1.tscn")
+onready var clawer = preload("res://characters/Clawer.tscn")
+onready var scorpion = preload("res://characters/Scorpion.tscn")
+
+
+func _enter_tree():
+	global.clear_leftover_enemies()
 
 func _ready():
 	set_process(true)
 	build_hint_tile_map()
+	
 	
 #builds the hint tile map so playuer knows where to put colors
 func build_hint_tile_map():
@@ -51,9 +58,9 @@ func open_victory_door():
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
 	
 func spawn_base_enemy():
-	var spawns = get_nodes_in_group("spawn")
-	if(spawns.length > 0):
-		var spawn = spawns[rand_range(0, spawns.length-1)]
+	var spawns = get_tree().get_nodes_in_group("spawn")
+	if(spawns.size() > 0):
+		var spawn = spawns[rand_range(0, spawns.size()-1)]
 		var newEnemy = enemy1.instance()
 		newEnemy.position = spawn.position
 		get_tree().get_root().add_child(newEnemy)

@@ -1,6 +1,7 @@
 extends "BasicEnemy.gd"
 
 func _ready():
+	attackTriggerDistance = 48
 	bloodColor = "green"
 	maxMoveSpeed = 100 #gimp :D
 	set_process(true)

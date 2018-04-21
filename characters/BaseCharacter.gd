@@ -8,6 +8,8 @@ var damage = 10
 var knockback = 2000
 var isAttacking = false
 
+var isFlippedH = false
+
 var isDead = false
 var velocity = Vector2()
 
@@ -25,7 +27,8 @@ func take_damage(damage):
 			death()
 			
 func take_knockback(knockback):
-	move_and_slide(knockback)
+	move_and_slide(knockback * maxMoveSpeed)
+	velocity = knockback * maxMoveSpeed
 	
 func get_position_on_map():
 	return position  + $CollisionBox.get_transform().get_origin() 
@@ -44,4 +47,16 @@ func toggle_on_is_attacking(binds=null):
 	
 func toggle_off_is_attacking(binds=null):
 	isAttacking = false
+	
+func flip_based_on_velocity():
+	#handle sprite flip by velocity
+	if(velocity.x > 0):
+		if(isFlippedH):
+			isFlippedH = false
+			apply_scale(Vector2(-1, 1))
+	elif(velocity.x < 0):
+		if(!isFlippedH):
+			isFlippedH = true
+			apply_scale(Vector2(-1, 1))
+	
 	
