@@ -102,5 +102,14 @@
 9/occluder_offset = Vector2( 32, 24 )
 9/navigation_offset = Vector2( 32, 24 )
 9/shapes = [  ]
+10/name = "whitetile"
+10/texture = ExtResource( 1 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 64, 48 )
+10/is_autotile = false
+10/occluder_offset = Vector2( 32, 24 )
+10/navigation_offset = Vector2( 32, 24 )
+10/shapes = [  ]
 _sections_unfolded = [ "0" ]
 

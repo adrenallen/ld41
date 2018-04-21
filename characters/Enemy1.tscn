@@ -73,7 +73,7 @@ custom_solver_bias = 0.0
 radius = 13.1522
 height = 40.0457
 
-[node name="KinematicBody2D" type="KinematicBody2D" groups=[
+[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
 "enemy",
 ]]
 
@@ -89,6 +89,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -3.58675, 38.7376 )
 scale = Vector2( 1.40113, 0.28506 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

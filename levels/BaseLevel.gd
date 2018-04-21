@@ -24,12 +24,16 @@ func _process(delta):
 
 # gets the tile coords based on game coords
 func get_tile_coords_by_game_coords(x,y):
-	return Vector2(round(x/$ActiveTileMap.cell_size.x), round(y/$ActiveTileMap.cell_size.y))
+	return Vector2(int(x/$ActiveTileMap.cell_size.x), int(y/$ActiveTileMap.cell_size.y))
 	
 #converts the tile at this position to the specified color
 func convert_tile_to_color(x,y,color):
 	var tile = get_tile_coords_by_game_coords(x,y)
 	$ActiveTileMap.set_cell(tile.x, tile.y, $ActiveTileMap.tile_set.find_tile_by_name(color+"tile"))
+	
+func clear_tile(x,y):
+	var tile = get_tile_coords_by_game_coords(x,y)
+	$ActiveTileMap.set_cell(tile.x, tile.y, -1)
 
 #Check if our player's tile map matches victory conditions
 func check_for_win_condition():

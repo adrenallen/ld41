@@ -7,7 +7,8 @@ func _ready():
 	set_physics_process(true)
 
 func bleed_color():
-	get_tree().get_root().get_node("Level/TileMapContainer").convert_tile_to_color(position.x, position.y, bloodColor)
+	var mapPos = get_position_on_map()
+	get_tree().get_root().get_node("Level/TileMapContainer").convert_tile_to_color(mapPos.x, mapPos.y, bloodColor)
 	
 func death():
 	bleed_color()

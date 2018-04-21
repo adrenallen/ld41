@@ -27,10 +27,14 @@ func take_damage(damage):
 func take_knockback(knockback):
 	move_and_slide(knockback)
 	
+func get_position_on_map():
+	return position  + $CollisionBox.get_transform().get_origin() 
+	
 func death():
 	print("Please implement death in children!")
 
 func attack():
+	velocity = Vector2(0,0)
 	toggle_on_is_attacking()
 	global.play_animation_if_not_playing("attack", $AnimationPlayer)
 	$AnimationPlayer.connect("animation_finished", self, "toggle_off_is_attacking", [], CONNECT_ONESHOT)
