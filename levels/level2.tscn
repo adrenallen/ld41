@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://characters/Scorpion.tscn" type="PackedScene" id=4]
-[ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://characters/Clawer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://levels/ProgressBar.gd" type="Script" id=7]
-[ext_resource path="res://levels/NextLevel.gd" type="Script" id=8]
+[ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/Clawer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/ProgressBar.gd" type="Script" id=6]
+[ext_resource path="res://levels/NextLevel.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -44,7 +43,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( 196620, 2, 0, 524291, 1, 0 )
 _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="WhiteTileMap" type="TileMap" parent="TileMapContainer" index="1"]
@@ -89,7 +88,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 7, 3, 0, 8, 4, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="ActiveTileMap" type="TileMap" parent="TileMapContainer" index="3"]
@@ -111,7 +110,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 7, 3, 0, 8, 4, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell", "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="TileMapContainer" index="4"]
@@ -245,15 +244,11 @@ shape = SubResource( 2 )
 
 [node name="Enemies" type="Node2D" parent="." index="3"]
 
-[node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 517.097, 118.56 )
-
-[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 5 )]
+[node name="KinematicBody2D2" parent="Enemies" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 183.934, 124.67 )
 
-[node name="KinematicBody2D3" parent="Enemies" index="2" instance=ExtResource( 6 )]
+[node name="KinematicBody2D3" parent="Enemies" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 834.535, 128.532 )
 
@@ -317,7 +312,7 @@ value = 0.0
 exp_edit = false
 rounded = true
 percent_visible = true
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Percent", "Theme", "Visibility" ]
 
 [node name="SpawnTimer" type="Timer" parent="." index="6"]
@@ -329,8 +324,8 @@ autostart = true
 
 [node name="NextLevel" type="Node" parent="." index="7"]
 
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
-nextLevel = "level2"
+nextLevel = "level3"
 
 

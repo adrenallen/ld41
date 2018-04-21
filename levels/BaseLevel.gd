@@ -36,12 +36,15 @@ func _process(delta):
 # gets the tile coords based on game coords
 func get_tile_coords_by_game_coords(x,y):
 	return Vector2(int(x/$ActiveTileMap.cell_size.x), int(y/$ActiveTileMap.cell_size.y))
-	
+
+func convert_tile_coords_to_game_coords(x,y):
+	return Vector2(int(x*$ActiveTileMap.cell_size.x)+int($ActiveTileMap.cell_size.x/2), int(y*$ActiveTileMap.cell_size.y)+int($ActiveTileMap.cell_size.y/2))
+
 #converts the tile at this position to the specified color
 func convert_tile_to_color(x,y,color):
 	var tile = get_tile_coords_by_game_coords(x,y)
 	$ActiveTileMap.set_cell(tile.x, tile.y, $ActiveTileMap.tile_set.find_tile_by_name(color+"tile"))
-	
+
 func clear_tile(x,y):
 	var tile = get_tile_coords_by_game_coords(x,y)
 	$ActiveTileMap.set_cell(tile.x, tile.y, -1)
@@ -54,10 +57,24 @@ func check_for_win_condition():
 			
 	return true;
 
+# x and y are map positions not game position
+func find_closest_used_tile(x, y):
+	var positionVector = Vector2(x,y)
+	var closestCell = null
+	var closestCellDistance = -1
+	
+	for cell in $ActiveTileMap.get_used_cells():
+		var diffVector = positionVector - cell
+		if(closestCellDistance < 0 || diffVector.length() < closestCellDistance):
+			closestCell = cell
+			closestCellDistance = diffVector.length()
+	
+	return closestCell
+
 func open_victory_door():
 	victoryDoorOpen = true
-	$ActiveTileMap.set_cell(7, 0, $ActiveTileMap.tile_set.find_tile_by_name("dooropen_left"))
-	$ActiveTileMap.set_cell(8, 0, $ActiveTileMap.tile_set.find_tile_by_name("dooropen_right"))
+	$WhiteTileMap.set_cell(7, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_left"))
+	$WhiteTileMap.set_cell(8, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_right"))
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
 	

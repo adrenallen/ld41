@@ -2,13 +2,15 @@ extends "BaseCharacter.gd"
 
 var attackTriggerDistance = 48
 
+var isSucking = false
+
 func _ready():
 	set_process(true)
 	set_physics_process(true)
 
 func bleed_color():
 	var mapPos = get_position_on_map()
-	get_tree().get_root().get_node("Level/TileMapContainer").convert_tile_to_color(mapPos.x, mapPos.y, bloodColor)
+	global.get_tile_map_container(self).convert_tile_to_color(mapPos.x, mapPos.y, bloodColor)
 	
 func death():
 	bleed_color()
@@ -18,8 +20,8 @@ func _process(delta):
 	
 	#handle sprite flip by velocity
 	flip_based_on_velocity()
-			
-	if(!isAttacking):
+	
+	if(!isAttacking && !isSucking):
 		if(velocity.length() > 6):
 			global.play_animation_if_not_playing("run", $AnimationPlayer)
 		elif(velocity.length() <= 6):
@@ -30,12 +32,15 @@ func move_character():
 	move_and_slide(velocity)
 
 func move_character_towards_player():
+	move_character_on_vector(get_vector_to_player().normalized())
+	
+func move_character_on_vector(vectorToMove):
+	vectorToMove = vectorToMove.normalized()
 	if(velocity.length() < maxMoveSpeed):
-		var toPlayerVector = get_vector_to_player().normalized()
-		toPlayerVector.x *= moveSpeed
-		toPlayerVector.y *= moveSpeed
+		vectorToMove.x *= moveSpeed
+		vectorToMove.y *= moveSpeed
 		#Add to existing velocity
-		velocity += toPlayerVector
+		velocity += vectorToMove
 	else:
 		velocity /= 10
 		

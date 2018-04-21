@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tiles/whitetile.png" type="Texture" id=1]
 [ext_resource path="res://tiles/redtile.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://tiles/door3.png" type="Texture" id=7]
 [ext_resource path="res://tiles/greenhint.png" type="Texture" id=8]
 [ext_resource path="res://tiles/redhint.png" type="Texture" id=9]
+[ext_resource path="res://tiles/bluetile.png" type="Texture" id=10]
+[ext_resource path="res://tiles/bluetilehint.png" type="Texture" id=11]
 
 [node name="Node2D" type="Node2D"]
 
@@ -57,5 +59,15 @@ texture = ExtResource( 8 )
 
 position = Vector2( 147.845, 134.561 )
 texture = ExtResource( 9 )
+
+[node name="bluetile" type="Sprite" parent="." index="9"]
+
+position = Vector2( 752.003, 118.001 )
+texture = ExtResource( 10 )
+
+[node name="bluetilehint" type="Sprite" parent="." index="10"]
+
+position = Vector2( 609.003, 157.001 )
+texture = ExtResource( 11 )
 
 
