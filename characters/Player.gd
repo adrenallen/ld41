@@ -1,11 +1,11 @@
 extends "BaseCharacter.gd"
 
-var velocity = Vector2(0,0)
 
-var moveSpeed = 50
-var maxSpeed = 300
 
 func _ready():
+	moveSpeed = 50
+	maxMoveSpeed = 300
+	damage = 50
 	set_process(true)
 	set_physics_process(true)
 
@@ -36,11 +36,18 @@ func _physics_process(delta):
 	else:
 		velocity.y -= velocity.y/10
 		
+	if(Input.is_action_pressed("ui_accept")):
+		var foundHitBoxes = $AttackBox.get_overlapping_areas()
+		for hitBox in foundHitBoxes:
+			if(hitBox.get_owner().is_in_group("enemy")):
+				hitBox.get_owner().take_damage(damage)
+
+		
 	#set a max speed for all directions
-	if(velocity.length() > maxSpeed):
+	if(velocity.length() > maxMoveSpeed):
 		velocity = velocity.normalized()
-		velocity.x *= maxSpeed
-		velocity.y *= maxSpeed
+		velocity.x *= maxMoveSpeed
+		velocity.y *= maxMoveSpeed
 		
 	move_and_slide(velocity)
 	

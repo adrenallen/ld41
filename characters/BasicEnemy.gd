@@ -1,13 +1,15 @@
 extends "BaseCharacter.gd"
 
-var velocity = Vector2(0,0)
-
-var moveSpeed = 50
-var maxSpeed = 300
-
 func _ready():
 	set_process(true)
 	set_physics_process(true)
+
+func bleed_color():
+	get_tree().get_root().get_node("Level/TileMapContainer").convert_tile_to_color(position.x, position.y, bloodColor)
+	
+func death():
+	bleed_color()
+	queue_free()
 
 func _process(delta):
 	
@@ -22,17 +24,26 @@ func _process(delta):
 func move_character():
 		
 	#set a max speed for all directions
-	if(velocity.length() > maxSpeed):
+	if(velocity.length() > maxMoveSpeed):
 		velocity = velocity.normalized()
-		velocity.x *= maxSpeed
-		velocity.y *= maxSpeed
+		velocity.x *= maxMoveSpeed
+		velocity.y *= maxMoveSpeed
 		
 	move_and_slide(velocity)
+
+func move_character_towards_player():
 	
+	var toPlayerVector = get_vector_to_player().normalized()
+	toPlayerVector.x *= moveSpeed
+	toPlayerVector.y *= moveSpeed
+	
+	#Add to existing velocity
+	velocity += toPlayerVector
+	move_character()
+
 func find_player_position():
 	var player = get_tree().get_nodes_in_group("player")[0]
 	return player.position
 
 func get_vector_to_player():
 	return find_player_position() - position
-	

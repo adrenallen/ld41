@@ -25,6 +25,7 @@ height = 40.0457
 "player",
 ]]
 
+position = Vector2( 3, -31 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

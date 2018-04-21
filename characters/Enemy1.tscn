@@ -25,6 +25,7 @@ height = 40.0457
 "enemy",
 ]]
 
+position = Vector2( 2, -40 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -53,7 +54,8 @@ blend_times = [  ]
 
 [node name="HitBox" type="Area2D" parent="." index="3"]
 
-visible = false
+position = Vector2( 1.95476, 7.17403 )
+scale = Vector2( 1.06109, 1.22419 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -67,8 +69,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 
-position = Vector2( -3.81312, 2.28384 )
-scale = Vector2( 1.36711, 1.57524 )
+position = Vector2( 2.8479, 1.63805 )
+scale = Vector2( 2.08964, 1.57524 )
 shape = SubResource( 2 )
 
 [node name="AttackBox" type="Area2D" parent="." index="4"]
