@@ -1,7 +1,5 @@
 extends "BaseCharacter.gd"
 
-
-
 func _ready():
 	moveSpeed = 50
 	maxMoveSpeed = 300
@@ -18,6 +16,11 @@ func _process(delta):
 	elif(velocity.x < 0):
 		if(!$Sprite.flip_h):
 			$Sprite.flip_h = true
+			
+	if(velocity.length() > 6):
+		global.play_animation_if_not_playing("run", $AnimationPlayer)
+	elif(velocity.length() <= 6):
+		global.play_animation_if_not_playing("idle", $AnimationPlayer)
 	
 func _physics_process(delta):
 	
