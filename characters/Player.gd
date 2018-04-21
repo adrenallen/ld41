@@ -51,16 +51,13 @@ func _physics_process(delta):
 		
 	move_and_slide(velocity)
 	
-func attack():
-	isAttacking = true
-	global.play_animation_if_not_playing("attack", $AnimationPlayer)
-	$AnimationPlayer.connect("animation_finished", self, "toggle_off_is_attacking", [], CONNECT_ONESHOT)
-		
 func do_attack_damage():
-	print("Do damage")
 	var foundHitBoxes = $AttackBox.get_overlapping_areas()
 	for hitBox in foundHitBoxes:
 		if(hitBox.get_owner().is_in_group("enemy")):
 			var enemy = hitBox.get_owner()
 			enemy.take_damage(damage)
 			enemy.take_knockback(Vector2(knockback, knockback) * velocity.normalized())
+	
+func death():
+	global.goto_scene("res://endgame.tscn")

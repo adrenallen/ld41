@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/level2.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters/Clawer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/Scorpion.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,7 +17,7 @@ extents = Vector2( 12.4085, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 [node name="TileMapContainer" type="Node2D" parent="." index="0"]
 
@@ -244,16 +245,12 @@ shape = SubResource( 2 )
 
 position = Vector2( 182, 268 )
 
-[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 5 )]
-
-position = Vector2( 847.961, 481.273 )
-
-[node name="KinematicBody2D3" parent="Enemies" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 841.822, 325.35 )
-
-[node name="KinematicBody2D4" parent="Enemies" index="3" instance=ExtResource( 5 )]
+[node name="KinematicBody2D4" parent="Enemies" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 850.416, 143.645 )
+
+[node name="KinematicBody2D2" parent="Enemies" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 854.294, 414.404 )
 
 

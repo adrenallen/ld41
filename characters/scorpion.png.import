@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clawer.png-e0d1409da9af61cf21b5ad2ef8f9326d.stex"
+path="res://.import/scorpion.png-bedd1687d4af791c19226a8dc77f9fad.stex"
 
 [deps]
 
-source_file="res://characters/clawer.png"
-source_md5="8a7b52db5ec333aae366f59bdf7db95a"
+source_file="res://characters/scorpion.png"
+source_md5="583d3a708dfcd4b361dacd6e74041a86"
 
-dest_files=[ "res://.import/clawer.png-e0d1409da9af61cf21b5ad2ef8f9326d.stex" ]
-dest_md5="4771ed55060d3e6c64d8661e6f9c39fa"
+dest_files=[ "res://.import/scorpion.png-bedd1687d4af791c19226a8dc77f9fad.stex" ]
+dest_md5="55880b0e620c158f36216f4a0ee00dd3"
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://characters/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://characters/enemy1.png" type="Texture" id=2]
@@ -8,6 +8,58 @@
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "attack"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "do_attack_damage"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "idle"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -41,14 +93,17 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
+anims/attack = SubResource( 5 )
+anims/idle = SubResource( 4 )
 blend_times = [  ]
 
 [node name="HitBox" type="Area2D" parent="." index="3"]
@@ -74,7 +129,6 @@ shape = SubResource( 2 )
 
 [node name="AttackBox" type="Area2D" parent="." index="4"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

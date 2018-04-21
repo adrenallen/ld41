@@ -1,32 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/Clawer.gd" type="Script" id=1]
-[ext_resource path="res://characters/clawer.png" type="Texture" id=2]
+[ext_resource path="res://characters/scorpion.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
-
-[sub_resource type="Animation" id=4]
-
-resource_name = "idle"
-length = 1.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -53,25 +34,24 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionBox" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -0.804432, 27.7376 )
-scale = Vector2( 1.53823, 0.28506 )
+position = Vector2( -2.98045, 38.7376 )
+scale = Vector2( 2.84804, 0.28506 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+position = Vector2( -1.3176, 12.3854 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-vframes = 2
-hframes = 6
-_sections_unfolded = [ "Animation", "Offset" ]
+_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
 root_node = NodePath("..")
-autoplay = "idle"
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle = SubResource( 4 )
 blend_times = [  ]
 
 [node name="HitBox" type="Area2D" parent="." index="3"]
@@ -91,8 +71,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 
-position = Vector2( 3.14059, -10.2013 )
-scale = Vector2( 2.74258, 1.57524 )
+position = Vector2( -1.79508, 1.63805 )
+scale = Vector2( 4.29833, 1.57524 )
 shape = SubResource( 2 )
 
 [node name="AttackBox" type="Area2D" parent="." index="4"]
@@ -110,8 +90,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" index="0"]
 
-position = Vector2( 19.8703, -6.28289 )
-scale = Vector2( 2.82005, 1 )
+position = Vector2( 31.9565, 5.93343 )
+scale = Vector2( 4.14269, 1 )
 shape = SubResource( 3 )
 
 

@@ -29,9 +29,15 @@ func take_knockback(knockback):
 	
 func death():
 	print("Please implement death in children!")
-	
+
+func attack():
+	toggle_on_is_attacking()
+	global.play_animation_if_not_playing("attack", $AnimationPlayer)
+	$AnimationPlayer.connect("animation_finished", self, "toggle_off_is_attacking", [], CONNECT_ONESHOT)
+
 func toggle_on_is_attacking(binds=null):
 	isAttacking = true
 	
 func toggle_off_is_attacking(binds=null):
 	isAttacking = false
+	

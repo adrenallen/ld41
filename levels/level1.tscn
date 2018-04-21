@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/ProgressBar.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -241,6 +242,8 @@ shape = SubResource( 2 )
 
 [node name="Enemies" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 182, 268 )
@@ -259,11 +262,42 @@ position = Vector2( 823.551, 195.978 )
 
 [node name="Spawns" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
+
 [node name="Position2D" type="Position2D" parent="Spawns" index="0" groups=[
 "spawn",
 ]]
 
 position = Vector2( 116.679, 100.831 )
 scale = Vector2( 1.5205, 1 )
+
+[node name="UI" type="Node2D" parent="." index="5"]
+
+[node name="ProgressBar" type="ProgressBar" parent="UI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 762.0
+margin_top = 18.0
+margin_right = 953.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = true
+percent_visible = true
+script = ExtResource( 5 )
+_sections_unfolded = [ "Material", "Percent", "Theme", "Visibility" ]
 
 
