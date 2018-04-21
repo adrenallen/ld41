@@ -3,6 +3,8 @@ extends Node2D
 var victoryDoorOpen = false
 var nextLevel = "level1"
 
+onready var enemy1 = preload("res://characters/Enemy1.tscn")
+
 func _ready():
 	set_process(true)
 	build_hint_tile_map()
@@ -43,4 +45,12 @@ func open_victory_door():
 	$ActiveTileMap.set_cell(8, 0, $ActiveTileMap.tile_set.find_tile_by_name("dooropen_right"))
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
+	
+func spawn_base_enemy():
+	var spawns = get_nodes_in_group("spawn")
+	if(spawns.length > 0):
+		var spawn = spawns[rand_range(0, spawns.length-1)]
+		var newEnemy = enemy1.instance()
+		newEnemy.position = spawn.position
+		get_tree().get_root().add_child(newEnemy)
 	

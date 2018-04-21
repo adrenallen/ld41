@@ -15,7 +15,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 [node name="TileMapContainer" type="Node2D" parent="." index="0"]
 
@@ -108,7 +108,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 7, 3, 0, 8, 4, 0 )
-_sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Cell", "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="TileMapContainer" index="4"]
 
@@ -132,11 +132,15 @@ shape = SubResource( 1 )
 
 [node name="Characters" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="KinematicBody2D" parent="Characters" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 507.056, 321.667 )
 
 [node name="Walls" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="NorthWall" type="StaticBody2D" parent="Walls" index="0"]
 
@@ -240,5 +244,26 @@ shape = SubResource( 2 )
 [node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 182, 268 )
+
+[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 194.188, 412.044 )
+
+[node name="KinematicBody2D3" parent="Enemies" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 799.175, 372.155 )
+
+[node name="KinematicBody2D4" parent="Enemies" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 823.551, 195.978 )
+
+[node name="Spawns" type="Node2D" parent="." index="4"]
+
+[node name="Position2D" type="Position2D" parent="Spawns" index="0" groups=[
+"spawn",
+]]
+
+position = Vector2( 116.679, 100.831 )
+scale = Vector2( 1.5205, 1 )
 
 

@@ -40,7 +40,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 327685, 2, 0 )
+tile_data = PoolIntArray( 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 2, 0, 327690, 2, 0, 327691, 2, 0, 393217, 1, 0, 393218, 1, 0, 393220, 1, 0, 393221, 2, 0, 393227, 2, 0, 458753, 1, 0, 458756, 1, 0, 458757, 2, 0, 458762, 2, 0, 458763, 2, 0, 524289, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524297, 2, 0, 524298, 2, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 2, 0, 589834, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0 )
 _sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
 
 [node name="WhiteTileMap" type="TileMap" parent="TileMapContainer" index="1"]
@@ -108,7 +108,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 7, 3, 0, 8, 4, 0 )
-_sections_unfolded = [ "Cell", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Cell", "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="TileMapContainer" index="4"]
 
