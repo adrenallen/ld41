@@ -16,6 +16,8 @@ func _ready():
 	GameDirector.init_director(self)
 	spawnTimer = get_owner().get_node("SpawnTimer")
 	global.display_score()
+	if global.shouldPlayMusic:
+		get_owner().get_node("Music").play()
 	
 
 	
@@ -46,6 +48,13 @@ func get_level_data():
 func _process(delta):
 	if(!victoryDoorOpen && check_for_win_condition()):
 		open_victory_door()
+	if(Input.is_action_just_pressed("music_toggle")):
+		if get_owner().get_node("Music").playing:
+			get_owner().get_node("Music").stop()
+			global.shouldPlayMusic = false
+		else:
+			get_owner().get_node("Music").play()
+			global.shouldPlayMusic = true
 
 # gets the tile coords based on game coords
 func get_tile_coords_by_game_coords(x,y):

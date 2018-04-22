@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://sounds/goodtile.wav" type="AudioStream" id=9]
 [ext_resource path="res://sounds/victorydooropen.wav" type="AudioStream" id=10]
 [ext_resource path="res://ui.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sounds/ingame.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -123,7 +124,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -196595, 2, 0, 262154, 2, 0 )
+tile_data = PoolIntArray( -65522, 2, 0 )
 _sections_unfolded = [ "Cell", "Transform", "Visibility", "Z Index" ]
 
 [node name="WhiteTileMap" type="TileMap" parent="TileMapContainer" index="1"]
@@ -409,20 +410,9 @@ shape = SubResource( 2 )
 
 position = Vector2( 842.184, 215.643 )
 
-[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 6 )]
-
-position = Vector2( 769.967, 147.445 )
-
 [node name="Spawns" type="Node2D" parent="." index="4"]
 
-[node name="Position2D5" type="Position2D" parent="Spawns" index="0" groups=[
-"spawn",
-]]
-
-position = Vector2( 838.608, 769.597 )
-scale = Vector2( 2.93034, 1.91201 )
-
-[node name="Position2D6" type="Position2D" parent="Spawns" index="1" groups=[
+[node name="Position2D6" type="Position2D" parent="Spawns" index="0" groups=[
 "spawn",
 ]]
 
@@ -440,12 +430,12 @@ autostart = false
 
 script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
-nextLevel = "level1"
+nextLevel = "level2"
 maxEnemies = 20
 maxDifficulty = 40
-redEnemies = 1
+redEnemies = 0
 greenEnemies = 5
-blueEnemies = 1
+blueEnemies = 0
 
 [node name="VictoryDoor" type="Sprite" parent="." index="7"]
 
@@ -478,5 +468,13 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 12 )
+volume_db = -25.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

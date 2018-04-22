@@ -6,6 +6,7 @@ extends Node
 var playerHealth
 var maxPlayerHealth = 250
 var playerScore = 0
+var shouldPlayMusic = true
 
 func _ready():
 	if playerHealth == null :
