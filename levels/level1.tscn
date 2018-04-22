@@ -20,7 +20,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 length = 1.0
 loop = false
@@ -49,6 +49,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="VictoryTileMap" type="TileMap" parent="TileMapContainer" index="0"]
 
+visible = false
 z_index = -100
 mode = 1
 tile_set = ExtResource( 2 )
@@ -386,9 +387,9 @@ _sections_unfolded = [ "Pause" ]
 nextLevel = "level1"
 maxEnemies = 20
 maxDifficulty = 40
-redEnemies = 0
+redEnemies = 1
 greenEnemies = 5
-blueEnemies = 0
+blueEnemies = 1
 
 [node name="VictoryDoor" type="Sprite" parent="." index="7"]
 
@@ -405,7 +406,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/openVictoryDoors = SubResource( 5 )
+anims/openVictoryDoors = SubResource( 3 )
 blend_times = [  ]
 
 [node name="UI" parent="." index="9" instance=ExtResource( 9 )]

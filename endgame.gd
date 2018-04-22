@@ -7,9 +7,6 @@ func _enter_tree():
 
 func _ready():
 	
-	#REMOVE THIS!
-	global.playerScore = 500
-	
 	$PlayAgainButton.connect("button_down", self, "start_over", [], CONNECT_ONESHOT)
 	$BackToMenuButton.connect("button_down", self, "main_menu", [], CONNECT_ONESHOT)
 	
