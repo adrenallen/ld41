@@ -33,8 +33,12 @@ func next_level(binds):
 	var levelPoints = calculate_level_score()
 	global.add_to_score(levelPoints)
 	
+	GameDirector.init_director(null)
 	var nextLevel = get_level_data().nextLevel
-	global.goto_scene("res://levels/"+nextLevel+".tscn")
+	if (nextLevel == "end"):
+		global.goto_scene("res://endgame.tscn")
+	else:
+		global.goto_scene("res://levels/"+nextLevel+".tscn")
 	
 func calculate_level_score():
 	var score = 0
