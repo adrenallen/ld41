@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
@@ -8,19 +8,76 @@
 [ext_resource path="res://levels/NextLevel.gd" type="Script" id=6]
 [ext_resource path="res://tiles/door.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="StyleBoxFlat" id=3]
 
-resource_name = "openVictoryDoors"
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.609375, 0.0452271, 0.0452271, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.109375, 0.109375, 0.109375, 1 )
+draw_center = true
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.175781, 0.175781, 0.175781, 1 )
+border_blend = false
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 8
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Corner Radius", "Expand Margin" ]
+
+[sub_resource type="Animation" id=9]
+
 length = 1.0
 loop = false
 step = 0.1
@@ -150,7 +207,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 31.2626, 149.933 )
 scale = Vector2( 6.92605, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="Characters" type="Node2D" parent="." index="1"]
 
@@ -178,7 +235,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 199.723, 14.1499 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="NorthWall2" type="StaticBody2D" parent="Walls" index="1"]
 
@@ -195,7 +252,7 @@ bounce = 0.0
 
 position = Vector2( 823.518, 14.2671 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="DoorWall" type="StaticBody2D" parent="Walls" index="2"]
 
@@ -212,7 +269,7 @@ bounce = 0.0
 
 position = Vector2( 513.038, 15.5939 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="SouthWall" type="StaticBody2D" parent="Walls" index="3"]
 
@@ -228,7 +285,7 @@ bounce = 0.0
 
 position = Vector2( 538.968, 609.749 )
 scale = Vector2( 41.5067, 3.3795 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="EastWall" type="StaticBody2D" parent="Walls" index="4"]
 
@@ -244,7 +301,7 @@ bounce = 0.0
 
 position = Vector2( 994.138, 300.103 )
 scale = Vector2( 2.79182, 27.3767 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="WestWall" type="StaticBody2D" parent="Walls" index="5"]
 
@@ -260,7 +317,7 @@ bounce = 0.0
 
 position = Vector2( 29.7075, 279.558 )
 scale = Vector2( 2.79182, 37.1453 )
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="Enemies" type="Node2D" parent="." index="3"]
 
@@ -320,24 +377,24 @@ scale = Vector2( 1.5205, 1 )
 
 [node name="UI" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
-
 [node name="ProgressBar" type="ProgressBar" parent="UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 762.0
-margin_top = 18.0
-margin_right = 953.0
-margin_bottom = 34.0
+margin_left = 765.0
+margin_top = 14.0
+margin_right = 1013.0
+margin_bottom = 48.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 6 )
 min_value = 0.0
 max_value = 100.0
 step = 1.0
@@ -381,7 +438,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/openVictoryDoors = SubResource( 3 )
+anims/openVictoryDoors = SubResource( 9 )
 blend_times = [  ]
 
 

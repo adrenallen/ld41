@@ -24,6 +24,10 @@ func clear_leftover_enemies():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
 		enemy.queue_free()
-		
+
+func next_level_player_health(health):
+	var healthLost = maxPlayerHealth - health
+	playerHealth = health + (healthLost/2) #give back half lost health each level
+
 func get_tile_map_container(useNode):
 	return useNode.get_tree().get_root().get_node("Level/TileMapContainer")

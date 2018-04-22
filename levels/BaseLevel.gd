@@ -23,7 +23,7 @@ func build_hint_tile_map():
 		$HintTileMap.set_cell(cell.x, cell.y, $HintTileMap.tile_set.find_tile_by_name($HintTileMap.tile_set.tile_get_name($VictoryTileMap.get_cell(cell[0], cell[1])) + "hint"))
 	
 func next_level(binds):
-	global.playerHealth = get_tree().get_nodes_in_group("player")[0].health
+	global.next_level_player_health(get_tree().get_nodes_in_group("player")[0].health)
 	var nextLevel = get_level_data().nextLevel
 	global.goto_scene("res://levels/"+nextLevel+".tscn")
 
