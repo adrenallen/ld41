@@ -56,7 +56,9 @@ func _physics_process(delta):
 	if(Input.is_action_pressed("player_clean") && !isCleaning && !isAttacking):
 		start_clean_tile()
 		
-	
+func take_damage(damage):
+	.take_damage(damage)
+	global.play_animation_if_not_playing("takeDamage", global.get_tile_map_container(self).get_owner().get_node("UI/AnimationPlayer"))
 	
 func do_attack_damage():
 	var foundHitBoxes = $AttackBox.get_overlapping_areas()
