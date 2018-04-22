@@ -173,7 +173,7 @@ position = Vector2( 520.561, 535.293 )
 position = Vector2( 11.8575, 752.589 )
 rotation = -3.05433
 input_pickable = false
-collision_layer = 1024
+collision_layer = 1
 collision_mask = 0
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
@@ -194,7 +194,7 @@ position = Vector2( 0.341697, -115.03 )
 rotation = 3.05433
 scale = Vector2( 1.01072, 1 )
 input_pickable = false
-collision_layer = 1024
+collision_layer = 1
 collision_mask = 0
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
@@ -236,6 +236,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/NorthWall2" index="0"]
 
@@ -357,32 +358,18 @@ position = Vector2( 769.967, 147.445 )
 
 [node name="Spawns" type="Node2D" parent="." index="4"]
 
-[node name="Position2D2" type="Position2D" parent="Spawns" index="0" groups=[
+[node name="Position2D5" type="Position2D" parent="Spawns" index="0" groups=[
 "spawn",
 ]]
 
-position = Vector2( -125.703, 545.659 )
+position = Vector2( 838.608, 769.597 )
 scale = Vector2( 2.93034, 1.91201 )
 
-[node name="Position2D3" type="Position2D" parent="Spawns" index="1" groups=[
+[node name="Position2D6" type="Position2D" parent="Spawns" index="1" groups=[
 "spawn",
 ]]
 
-position = Vector2( -133.865, 156.591 )
-scale = Vector2( 2.93034, 1.91201 )
-
-[node name="Position2D4" type="Position2D" parent="Spawns" index="2" groups=[
-"spawn",
-]]
-
-position = Vector2( 1203.38, 145.708 )
-scale = Vector2( 2.93034, 1.91201 )
-
-[node name="Position2D5" type="Position2D" parent="Spawns" index="3" groups=[
-"spawn",
-]]
-
-position = Vector2( 1203.38, 635.444 )
+position = Vector2( 271.847, 777.134 )
 scale = Vector2( 2.93034, 1.91201 )
 
 [node name="SpawnTimer" type="Timer" parent="." index="5"]
@@ -396,7 +383,7 @@ autostart = false
 
 script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
-nextLevel = "level2"
+nextLevel = "level1"
 maxEnemies = 20
 maxDifficulty = 40
 redEnemies = 0

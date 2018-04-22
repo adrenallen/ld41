@@ -3,6 +3,8 @@ extends Node2D
 var victoryDoorOpen = false
 var spawnTimer
 
+const tileGoodPointValue = 100
+const tileBadPointValue = -20
 
 
 func _enter_tree():
@@ -13,6 +15,7 @@ func _ready():
 	build_hint_tile_map()
 	GameDirector.init_director(self)
 	spawnTimer = get_owner().get_node("SpawnTimer")
+	global.display_score()
 	
 
 	
@@ -24,8 +27,18 @@ func build_hint_tile_map():
 	
 func next_level(binds):
 	global.next_level_player_health(get_tree().get_nodes_in_group("player")[0].health)
+	
+	var levelPoints = calculate_level_score()
+	global.add_to_score(levelPoints)
+	
 	var nextLevel = get_level_data().nextLevel
 	global.goto_scene("res://levels/"+nextLevel+".tscn")
+	
+func calculate_level_score():
+	var score = 0
+	score += $VictoryTileMap.get_used_cells().size() * tileGoodPointValue
+	score += ($ActiveTileMap.get_used_cells().size() - $VictoryTileMap.get_used_cells().size()) * tileBadPointValue
+	return score
 
 func get_level_data():
 	return get_owner().get_node("LevelData")

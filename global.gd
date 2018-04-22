@@ -5,11 +5,20 @@ extends Node
 # var b = "textvar"
 var playerHealth
 var maxPlayerHealth = 250
+var playerScore = 0
 
 func _ready():
 	if playerHealth == null :
 		playerHealth = maxPlayerHealth
 	pass
+
+func add_to_score(value):
+	playerScore += value
+	display_score()
+
+func display_score():
+	print("set score to ", str(playerScore))
+	get_tree().get_root().get_node("Level/UI/ScoreBox/ScoreValue").text = str(playerScore)
 
 func goto_scene(scene):
 	get_tree().change_scene(scene)
