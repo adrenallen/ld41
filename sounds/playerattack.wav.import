@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/playerattack.wav-45d48f90c2b0f644463a4bbff299ab09.sample"
+
+[deps]
+
+source_file="res://sounds/playerattack.wav"
+source_md5="7120ac40b8c5c36aa909169cf6cf3856"
+
+dest_files=[ "res://.import/playerattack.wav-45d48f90c2b0f644463a4bbff299ab09.sample" ]
+dest_md5="5e996161691170b6440807a516895dda"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
