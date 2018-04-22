@@ -19,6 +19,10 @@ func _ready():
 func _process(delta):
 	z_index = 100 + position.y
 
+func bleed_color():
+	var mapPos = get_position_on_map()
+	global.get_tile_map_container(self).convert_tile_to_color(mapPos.x, mapPos.y, bloodColor)
+
 func take_damage(damage):
 	if(health > 0):
 		health -= damage

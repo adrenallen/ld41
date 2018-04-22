@@ -57,8 +57,9 @@ func _physics_process(delta):
 		start_clean_tile()
 		
 func take_damage(damage):
-	.take_damage(damage)
-	global.play_animation_if_not_playing("takeDamage", global.get_tile_map_container(self).get_owner().get_node("UI/AnimationPlayer"))
+	if !isDead:
+		.take_damage(damage)
+		global.play_animation_if_not_playing("takeDamage", global.get_tile_map_container(self).get_owner().get_node("UI/AnimationPlayer"))
 	
 func do_attack_damage():
 	var foundHitBoxes = $AttackBox.get_overlapping_areas()
@@ -84,5 +85,10 @@ func clean_tile(binds=null):
 	isCleaning = false
 
 func death():
+	set_physics_process(false)
+	set_process(false)
+	isDead = true
 	GameDirector.levelNode = null
-	global.goto_scene("res://endgame.tscn")
+	bleed_color()
+	global.play_animation_if_not_playing("death", $AnimationPlayer)
+	get_tree().get_root().get_node("Level/UI").lose_game()

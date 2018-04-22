@@ -9,10 +9,6 @@ var difficulty = 1
 func _ready():
 	set_process(true)
 	set_physics_process(true)
-
-func bleed_color():
-	var mapPos = get_position_on_map()
-	global.get_tile_map_container(self).convert_tile_to_color(mapPos.x, mapPos.y, bloodColor)
 	
 func death():
 	bleed_color()
@@ -60,17 +56,17 @@ func move_character_on_vector(vectorToMove):
 func is_player_in_attack_box():
 	var foundHitBoxes = $AttackBox.get_overlapping_areas()
 	for hitBox in foundHitBoxes:
-		if(hitBox.get_owner().is_in_group("player")):
+		if(hitBox.get_owner().is_in_group("player") && !hitBox.get_owner().isDead):
 			return true
 	return false
 
 #Finds the player position
 func find_player_position():
 	var player = get_tree().get_nodes_in_group("player")
-	if(player.size() > 0):
+	if(player.size() > 0 && !player[0].isDead):
 		return player[0].position
-		
-	return Vector2(0,0)
+	else:
+		return position
 
 #get the vector diff to player
 func get_vector_to_player():

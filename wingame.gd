@@ -3,7 +3,7 @@ extends Node2D
 var scorePointer = 0
 
 func _enter_tree():
-	#	global.clear_leftover_enemies()
+	global.clear_leftover_enemies()
 	pass
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex"
+path="res://.import/genericscreen_transparent.png-11be1aaec0325f1c8fe39a4972f16445.stex"
 
 [deps]
 
-source_file="res://characters/player.png"
-source_md5="4c80b1c28f50923a0adab63918b7c2fe"
+source_file="res://tiles/genericscreen_transparent.png"
+source_md5="18486d1c8452cba13ea592bdb3a88786"
 
-dest_files=[ "res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex" ]
-dest_md5="b8a70b5e6a812e50e429ca11cac3f0fc"
+dest_files=[ "res://.import/genericscreen_transparent.png-11be1aaec0325f1c8fe39a4972f16445.stex" ]
+dest_md5="12d6e8b18da2c8435462e6ac70ec7adc"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

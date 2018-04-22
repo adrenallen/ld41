@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex"
+path="res://.import/victory.png-5e55c512d67b6b70128766708c9921aa.stex"
 
 [deps]
 
-source_file="res://characters/player.png"
-source_md5="4c80b1c28f50923a0adab63918b7c2fe"
+source_file="res://tiles/victory.png"
+source_md5="2e287377a1ed6cfc5cffe40dee977fe5"
 
-dest_files=[ "res://.import/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.stex" ]
-dest_md5="b8a70b5e6a812e50e429ca11cac3f0fc"
+dest_files=[ "res://.import/victory.png-5e55c512d67b6b70128766708c9921aa.stex" ]
+dest_md5="2b6c786b18ca418d936afd8cbb2251d8"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

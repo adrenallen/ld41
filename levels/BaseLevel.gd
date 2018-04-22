@@ -37,7 +37,7 @@ func next_level(binds):
 	GameDirector.init_director(null)
 	var nextLevel = get_level_data().nextLevel
 	if (nextLevel == "end"):
-		global.goto_scene("res://endgame.tscn")
+		global.goto_scene("res://wingame.tscn")
 	else:
 		global.goto_scene("res://levels/"+nextLevel+".tscn")
 	

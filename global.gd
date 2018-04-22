@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "textvar"
 var playerHealth
-var maxPlayerHealth = 250
+var maxPlayerHealth = 150
 var playerScore = 0
 var shouldPlayMusic = true
 
