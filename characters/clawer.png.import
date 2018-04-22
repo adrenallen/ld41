@@ -7,10 +7,10 @@ path="res://.import/clawer.png-e0d1409da9af61cf21b5ad2ef8f9326d.stex"
 [deps]
 
 source_file="res://characters/clawer.png"
-source_md5="f1320951d17162657e10790c5a74b3c7"
+source_md5="6561bf33a8cecf8263de77ac92d7b8cf"
 
 dest_files=[ "res://.import/clawer.png-e0d1409da9af61cf21b5ad2ef8f9326d.stex" ]
-dest_md5="53b7caddcf4c3f34bc55f5a1335c427a"
+dest_md5="22fac51f5a773f1b06d69879acd3b30a"
 
 [params]
 
