@@ -14,14 +14,6 @@ var colorEnemyList = {
 	"green": ["enemy1"]
 }
 
-#onready var scorpion = preload("res://characters/Scorpion.tscn")
-
-#export var nextLevel = "level1"
-#export var maxEnemies = 20
-#export var maxDifficulty = 40
-#export var redEnemies = 0
-#export var greenEnemies = 5
-#export var blueEnemies = 0
 
 func _ready():
 	set_process(true)
