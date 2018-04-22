@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 resource_name = "attack"
 length = 0.4
@@ -42,7 +42,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 
 resource_name = "clean"
 length = 0.5
@@ -99,13 +99,13 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 6 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=6]
 
 custom_solver_bias = 0.0
 radius = 13.1522
 height = 40.0457
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=7]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -118,7 +118,7 @@ height = 20.0
 position = Vector2( 4, 0 )
 input_pickable = false
 collision_layer = 1025
-collision_mask = 1
+collision_mask = 1025
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -143,8 +143,8 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/attack = SubResource( 6 )
-anims/clean = SubResource( 7 )
+anims/attack = SubResource( 2 )
+anims/clean = SubResource( 3 )
 anims/idle = SubResource( 4 )
 anims/run = SubResource( 5 )
 blend_times = [  ]
@@ -166,7 +166,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 32.8708, 1.95737 )
 scale = Vector2( 3.56302, 0.9078 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
@@ -186,6 +186,6 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -3.81312, 2.28384 )
 scale = Vector2( 1.36711, 1.57524 )
-shape = SubResource( 2 )
+shape = SubResource( 7 )
 
 

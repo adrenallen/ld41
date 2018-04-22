@@ -79,13 +79,14 @@ tracks/0/keys = {
 "values": [ Color( 0.5625, 0.098877, 0.098877, 0 ), Color( 0.5625, 0.098877, 0.098877, 0.558039 ), Color( 0.5625, 0.098877, 0.098877, 0 ) ]
 }
 
-[node name="UI" type="Node2D" index="0"]
+[node name="UI" type="Node2D"]
 
 z_index = 1000
 _sections_unfolded = [ "Anchor", "Focus", "Hint", "Margin", "Rect", "Visibility", "Z Index" ]
 
 [node name="ProgressBar" type="ProgressBar" parent="." index="0"]
 
+modulate = Color( 1, 1, 1, 0.734824 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -111,6 +112,7 @@ exp_edit = false
 rounded = true
 percent_visible = true
 script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="ColorRect" type="ColorRect" parent="." index="1"]
 

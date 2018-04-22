@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door.png-015d0091f7abfb153d6b55d6d6e7cb00.stex"
+path="res://.import/wall.png-5ce395d0bb3bb6421fdacc0a7ddd35b1.stex"
 
 [deps]
 
-source_file="res://tiles/door.png"
-source_md5="7148ef6704d01aa31f41378af8a12546"
+source_file="res://tiles/wall.png"
+source_md5="e2b5b41c8c9b334a2f0c96cab632dced"
 
-dest_files=[ "res://.import/door.png-015d0091f7abfb153d6b55d6d6e7cb00.stex" ]
-dest_md5="dd698b5a4547fa7e91b2bcca33793afe"
+dest_files=[ "res://.import/wall.png-5ce395d0bb3bb6421fdacc0a7ddd35b1.stex" ]
+dest_md5="877398b4f6482ffd685d2daf2f58dae3"
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

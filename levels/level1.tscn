@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/NextLevel.gd" type="Script" id=5]
-[ext_resource path="res://tiles/door.png" type="Texture" id=6]
-[ext_resource path="res://ui.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tiles/wall_bottom.png" type="Texture" id=4]
+[ext_resource path="res://tiles/wall.png" type="Texture" id=5]
+[ext_resource path="res://characters/Enemy1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/NextLevel.gd" type="Script" id=7]
+[ext_resource path="res://tiles/door.png" type="Texture" id=8]
+[ext_resource path="res://ui.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,7 +38,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -164,9 +166,79 @@ position = Vector2( 520.561, 535.293 )
 
 [node name="Walls" type="Node2D" parent="." index="2"]
 
-[node name="NorthWall" type="StaticBody2D" parent="Walls" index="0"]
+[node name="Colliders" type="Node2D" parent="Walls" index="0"]
 
-position = Vector2( 0, 52 )
+[node name="WestWall" type="StaticBody2D" parent="Walls/Colliders" index="0"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/WestWall" index="0"]
+
+position = Vector2( 29.7075, 279.558 )
+scale = Vector2( 2.79182, 37.1453 )
+shape = SubResource( 2 )
+
+[node name="EastWall" type="StaticBody2D" parent="Walls/Colliders" index="1"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/EastWall" index="0"]
+
+position = Vector2( 994.138, 300.103 )
+scale = Vector2( 2.79182, 27.3767 )
+shape = SubResource( 2 )
+
+[node name="SouthWall" type="StaticBody2D" parent="Walls/Colliders" index="2"]
+
+input_pickable = false
+collision_layer = 1024
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/SouthWall" index="0"]
+
+position = Vector2( 538.968, 609.749 )
+scale = Vector2( 41.5067, 3.3795 )
+shape = SubResource( 2 )
+
+[node name="NorthWall2" type="StaticBody2D" parent="Walls/Colliders" index="3"]
+
+position = Vector2( 0, 55 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/NorthWall2" index="0"]
+
+position = Vector2( 823.518, 14.2671 )
+scale = Vector2( 19.9706, 3.3795 )
+shape = SubResource( 2 )
+
+[node name="NorthWall" type="StaticBody2D" parent="Walls/Colliders" index="4"]
+
+position = Vector2( 0, 55 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -176,32 +248,34 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/NorthWall" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/NorthWall" index="0"]
 
 position = Vector2( 199.723, 14.1499 )
 scale = Vector2( 19.9706, 3.3795 )
 shape = SubResource( 2 )
 
-[node name="NorthWall2" type="StaticBody2D" parent="Walls" index="1"]
+[node name="Art" type="Node2D" parent="Walls" index="1"]
 
-position = Vector2( 0, 53 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+[node name="NorthWallBottomARt" type="Sprite" parent="Walls/Art" index="0"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/NorthWall2" index="0"]
+position = Vector2( 514.358, 102.226 )
+z_index = 1
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1028, 3 )
+_sections_unfolded = [ "Region", "Z Index" ]
 
-position = Vector2( 823.518, 14.2671 )
-scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 2 )
+[node name="NorthWallArt" type="Sprite" parent="Walls/Art" index="1"]
+
+position = Vector2( 514.02, 7.43216 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1028, 192 )
+_sections_unfolded = [ "Region" ]
 
 [node name="DoorWall" type="StaticBody2D" parent="Walls" index="2"]
 
-position = Vector2( 0, 51 )
+position = Vector2( 0, 53 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -216,61 +290,13 @@ position = Vector2( 513.038, 15.5939 )
 scale = Vector2( 19.9706, 3.3795 )
 shape = SubResource( 2 )
 
-[node name="SouthWall" type="StaticBody2D" parent="Walls" index="3"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SouthWall" index="0"]
-
-position = Vector2( 538.968, 609.749 )
-scale = Vector2( 41.5067, 3.3795 )
-shape = SubResource( 2 )
-
-[node name="EastWall" type="StaticBody2D" parent="Walls" index="4"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/EastWall" index="0"]
-
-position = Vector2( 994.138, 300.103 )
-scale = Vector2( 2.79182, 27.3767 )
-shape = SubResource( 2 )
-
-[node name="WestWall" type="StaticBody2D" parent="Walls" index="5"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WestWall" index="0"]
-
-position = Vector2( 29.7075, 279.558 )
-scale = Vector2( 2.79182, 37.1453 )
-shape = SubResource( 2 )
-
 [node name="Enemies" type="Node2D" parent="." index="3"]
 
-[node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 4 )]
+[node name="KinematicBody2D" parent="Enemies" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 842.184, 215.643 )
 
-[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 4 )]
+[node name="KinematicBody2D2" parent="Enemies" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 769.967, 147.445 )
 
@@ -280,29 +306,29 @@ position = Vector2( 769.967, 147.445 )
 "spawn",
 ]]
 
-position = Vector2( 107.441, 537.094 )
-scale = Vector2( 1.5205, 1 )
+position = Vector2( -125.703, 545.659 )
+scale = Vector2( 2.93034, 1.91201 )
 
 [node name="Position2D3" type="Position2D" parent="Spawns" index="1" groups=[
 "spawn",
 ]]
 
-position = Vector2( 87.7972, 146.673 )
-scale = Vector2( 1.5205, 1 )
+position = Vector2( -133.865, 156.591 )
+scale = Vector2( 2.93034, 1.91201 )
 
 [node name="Position2D4" type="Position2D" parent="Spawns" index="2" groups=[
 "spawn",
 ]]
 
-position = Vector2( 901.789, 553.055 )
-scale = Vector2( 1.5205, 1 )
+position = Vector2( 1203.38, 145.708 )
+scale = Vector2( 2.93034, 1.91201 )
 
 [node name="Position2D5" type="Position2D" parent="Spawns" index="3" groups=[
 "spawn",
 ]]
 
-position = Vector2( 938.621, 130.712 )
-scale = Vector2( 1.5205, 1 )
+position = Vector2( 1203.38, 635.444 )
+scale = Vector2( 2.93034, 1.91201 )
 
 [node name="SpawnTimer" type="Timer" parent="." index="5"]
 
@@ -313,7 +339,7 @@ autostart = false
 
 [node name="LevelData" type="Node" parent="." index="6"]
 
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
 nextLevel = "level2"
 maxEnemies = 20
@@ -325,9 +351,10 @@ blueEnemies = 0
 [node name="VictoryDoor" type="Sprite" parent="." index="7"]
 
 position = Vector2( 537.397, 59.7259 )
-texture = ExtResource( 6 )
+z_index = 2
+texture = ExtResource( 8 )
 vframes = 2
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
 
@@ -339,6 +366,6 @@ playback_speed = 1.0
 anims/openVictoryDoors = SubResource( 5 )
 blend_times = [  ]
 
-[node name="UI" parent="." index="9" instance=ExtResource( 7 )]
+[node name="UI" parent="." index="9" instance=ExtResource( 9 )]
 
 
