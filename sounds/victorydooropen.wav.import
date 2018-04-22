@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/victorydooropen.wav-76b7620c132d1abd25d1d43f8f963cf6.sample"
+
+[deps]
+
+source_file="res://sounds/victorydooropen.wav"
+source_md5="f1e52311e001a7ee33d54ef639ba922d"
+
+dest_files=[ "res://.import/victorydooropen.wav-76b7620c132d1abd25d1d43f8f963cf6.sample" ]
+dest_md5="c92c672ce3ecdc23876c2dbbc4feb5b7"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

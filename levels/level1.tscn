@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://levels/NextLevel.gd" type="Script" id=7]
 [ext_resource path="res://tiles/door.png" type="Texture" id=8]
 [ext_resource path="res://ui.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sounds/victorydooropen.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,6 +37,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Level" type="Node2D"]
@@ -410,5 +423,16 @@ anims/openVictoryDoors = SubResource( 3 )
 blend_times = [  ]
 
 [node name="UI" parent="." index="9" instance=ExtResource( 9 )]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="10"]
+
+position = Vector2( 538.565, 54.415 )
+stream = ExtResource( 10 )
+volume_db = -20.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

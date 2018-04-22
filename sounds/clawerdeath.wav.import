@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/clawerdeath.wav-24f6e3efc540c6267599181a2f7bd919.sample"
+
+[deps]
+
+source_file="res://sounds/clawerdeath.wav"
+source_md5="47e4002b10ec22af161ff0465e26cf99"
+
+dest_files=[ "res://.import/clawerdeath.wav-24f6e3efc540c6267599181a2f7bd919.sample" ]
+dest_md5="24af63ec938391efb45f56584431bdc0"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

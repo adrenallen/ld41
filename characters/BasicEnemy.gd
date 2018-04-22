@@ -16,8 +16,16 @@ func bleed_color():
 	
 func death():
 	bleed_color()
-	queue_free()
+	# this is dumb but stops other anims I think
+	isAttacking = true
+	isSucking = true
+	global.play_animation_if_not_playing("death", $AnimationPlayer)
+	$CollisionBox.disabled = true
+	
 
+func destroy_enemy():
+	queue_free()
+	
 func _process(delta):
 	
 	#handle sprite flip by velocity

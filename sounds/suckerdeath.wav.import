@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/suckerdeath.wav-0f10a3c2d1581e1d805fd2b4b5b2bac3.sample"
+
+[deps]
+
+source_file="res://sounds/suckerdeath.wav"
+source_md5="4958aebad3143bd585073fc89e2c7dc3"
+
+dest_files=[ "res://.import/suckerdeath.wav-0f10a3c2d1581e1d805fd2b4b5b2bac3.sample" ]
+dest_md5="743bef1ac727a32ed1d2e4eeb5ae459e"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
