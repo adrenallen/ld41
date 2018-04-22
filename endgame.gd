@@ -11,11 +11,19 @@ func _ready():
 	global.playerScore = 500
 	
 	$PlayAgainButton.connect("button_down", self, "start_over", [], CONNECT_ONESHOT)
+	$BackToMenuButton.connect("button_down", self, "main_menu", [], CONNECT_ONESHOT)
+	
 	$ScoreAddTimer.connect("timeout", self, "add_to_score_label")
 	
 func start_over():
 	global.playerHealth = global.maxPlayerHealth
+	global.playerScore = 0
 	global.goto_scene("res://levels/level1.tscn")
+
+func main_menu():
+	global.playerHealth = global.maxPlayerHealth
+	global.playerScore = 0
+	global.goto_scene("res://titlescreen.tscn")
 
 func add_to_score_label():
 	

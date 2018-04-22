@@ -3,7 +3,7 @@
 [ext_resource path="res://titlescreen.gd" type="Script" id=1]
 [ext_resource path="res://tiles/titlescreen.png" type="Texture" id=2]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -123,7 +123,10 @@ Clean Tiles - \"c\"
 
 Goal of game:
 
-Kill monsters of the right color on the indicated tiles to unlock the next room.  There is a final room, so see if you can reach it!"
+Kill monsters of the right color on the indicated tiles to unlock the next room. 
+
+
+There is a final room, so see if you can reach it!"
 align = 1
 autowrap = true
 percent_visible = 1.0
