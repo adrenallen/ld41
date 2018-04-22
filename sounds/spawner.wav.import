@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spawner.wav-2efc0aaf551cd806d400b3c138701bc9.sample"
+
+[deps]
+
+source_file="res://sounds/spawner.wav"
+source_md5="beac20b824bcf51edf34712194a3dc95"
+
+dest_files=[ "res://.import/spawner.wav-2efc0aaf551cd806d400b3c138701bc9.sample" ]
+dest_md5="e200940c2ef5501395380e9b5b81073b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
