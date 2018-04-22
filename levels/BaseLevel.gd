@@ -1,10 +1,8 @@
 extends Node2D
 
 var victoryDoorOpen = false
+var spawnTimer
 
-onready var enemy1 = preload("res://characters/Enemy1.tscn")
-onready var clawer = preload("res://characters/Clawer.tscn")
-onready var scorpion = preload("res://characters/Scorpion.tscn")
 
 
 func _enter_tree():
@@ -13,10 +11,10 @@ func _enter_tree():
 func _ready():
 	set_process(true)
 	build_hint_tile_map()
+	GameDirector.init_director(self)
+	spawnTimer = get_owner().get_node("SpawnTimer")
 	
-	# TODO - make this more like an AI director
-	get_owner().get_node("SpawnTimer").connect("timeout", self, "spawn_base_enemy")
-	
+
 	
 #builds the hint tile map so playuer knows where to put colors
 func build_hint_tile_map():
@@ -26,9 +24,12 @@ func build_hint_tile_map():
 	
 func next_level(binds):
 	global.playerHealth = get_tree().get_nodes_in_group("player")[0].health
-	var nextLevel = get_owner().get_node("NextLevel").nextLevel
+	var nextLevel = get_level_data().nextLevel
 	global.goto_scene("res://levels/"+nextLevel+".tscn")
-	
+
+func get_level_data():
+	return get_owner().get_node("LevelData")
+
 func _process(delta):
 	if(!victoryDoorOpen && check_for_win_condition()):
 		open_victory_door()
@@ -94,11 +95,9 @@ func open_victory_door():
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
 	
-func spawn_base_enemy():
+func spawn_instance_on_random_point(instance):
 	var spawns = get_tree().get_nodes_in_group("spawn")
 	if(spawns.size() > 0):
 		var spawn = spawns[rand_range(0, spawns.size()-1)]
-		var newEnemy = enemy1.instance()
-		newEnemy.position = spawn.position
-		get_tree().get_root().add_child(newEnemy)
-	
+		instance.position = spawn.position
+		get_tree().get_root().add_child(instance)

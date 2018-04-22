@@ -2,7 +2,7 @@ extends "BaseCharacter.gd"
 
 var isCleaning = false
 
-
+	
 func _ready():
 	moveSpeed = 50
 	maxMoveSpeed = 300
@@ -82,4 +82,5 @@ func clean_tile(binds=null):
 	isCleaning = false
 
 func death():
+	GameDirector.levelNode = null
 	global.goto_scene("res://endgame.tscn")

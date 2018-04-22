@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "textvar"
 var playerHealth
-var maxPlayerHealth = 100
+var maxPlayerHealth = 250
 
 func _ready():
 	if playerHealth == null :

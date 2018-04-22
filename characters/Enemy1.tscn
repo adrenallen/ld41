@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://characters/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://characters/enemy1.png" type="Texture" id=2]
@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 resource_name = "attack"
 length = 0.4
@@ -42,7 +42,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource_name = "idle"
 length = 1.0
@@ -61,13 +61,20 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="Animation" id=6]
+
+resource_name = "run"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 13.1522
@@ -104,13 +111,14 @@ autoplay = "idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/attack = SubResource( 5 )
-anims/idle = SubResource( 4 )
+anims/attack = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/run = SubResource( 6 )
 blend_times = [  ]
 
 [node name="HitBox" type="Area2D" parent="." index="3"]
 
-position = Vector2( 1.95476, 7.17403 )
+position = Vector2( -5.04525, 7.17403 )
 scale = Vector2( 1.06109, 1.22419 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -127,7 +135,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 2.8479, 1.63805 )
 scale = Vector2( 2.08964, 1.57524 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="AttackBox" type="Area2D" parent="." index="4"]
 
@@ -146,6 +154,6 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 12.3621, 1.71711 )
 scale = Vector2( 2.2933, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 

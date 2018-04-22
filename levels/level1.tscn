@@ -283,8 +283,28 @@ position = Vector2( 519.334, 186.616 )
 "spawn",
 ]]
 
-visible = false
 position = Vector2( 107.441, 537.094 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D3" type="Position2D" parent="Spawns" index="1" groups=[
+"spawn",
+]]
+
+position = Vector2( 87.7972, 146.673 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D4" type="Position2D" parent="Spawns" index="2" groups=[
+"spawn",
+]]
+
+position = Vector2( 901.789, 553.055 )
+scale = Vector2( 1.5205, 1 )
+
+[node name="Position2D5" type="Position2D" parent="Spawns" index="3" groups=[
+"spawn",
+]]
+
+position = Vector2( 938.621, 130.712 )
 scale = Vector2( 1.5205, 1 )
 
 [node name="UI" type="Node2D" parent="." index="5"]
@@ -321,15 +341,20 @@ _sections_unfolded = [ "Material", "Percent", "Theme", "Visibility" ]
 [node name="SpawnTimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
-wait_time = 3.0
-one_shot = false
-autostart = true
+wait_time = 5.0
+one_shot = true
+autostart = false
 
-[node name="NextLevel" type="Node" parent="." index="7"]
+[node name="LevelData" type="Node" parent="." index="7"]
 
 script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
 nextLevel = "level2"
+maxEnemies = 20
+maxDifficulty = 40
+redEnemies = 0
+greenEnemies = 5
+blueEnemies = 0
 
 [node name="VictoryDoor" type="Sprite" parent="." index="8"]
 

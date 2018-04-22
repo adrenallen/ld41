@@ -1,5 +1,6 @@
 extends "BasicEnemy.gd"
 
+
 func _ready():
 	attackTriggerDistance = 64
 	bloodColor = "red"

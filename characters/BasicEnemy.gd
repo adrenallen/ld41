@@ -4,6 +4,8 @@ var attackTriggerDistance = 48
 
 var isSucking = false
 
+var difficulty = 1
+
 func _ready():
 	set_process(true)
 	set_physics_process(true)
