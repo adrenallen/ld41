@@ -88,7 +88,7 @@ anchor_bottom = 0.0
 margin_left = 209.0
 margin_top = 69.0
 margin_right = 861.0
-margin_bottom = 482.0
+margin_bottom = 533.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -106,7 +106,7 @@ anchor_bottom = 0.0
 margin_left = 99.0
 margin_top = 44.0
 margin_right = 517.0
-margin_bottom = 228.0
+margin_bottom = 381.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -125,6 +125,10 @@ Goal of game:
 
 Kill monsters of the right color on the indicated tiles to unlock the next room. 
 
+You get points oncea  level is completed, points are given for correct tiles filled in. 
+You lose points for every tile that is incorrectly filled in! So make sure you clean them before moving on!
+
+You gain 50% of your missing health back each level.
 
 There is a final room, so see if you can reach it!"
 align = 1
@@ -140,9 +144,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 261.0
-margin_top = 354.0
+margin_top = 409.0
 margin_right = 369.0
-margin_bottom = 380.0
+margin_bottom = 435.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
