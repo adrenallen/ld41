@@ -9,7 +9,10 @@ func init_spawner(instances):
 	instancesToSpawn = instances
 	
 func initiate_spawn():
-	$AnimationPlayer.play("up")
+	if(instancesToSpawn.size() > 0):
+		$AnimationPlayer.play("up")
+	else:
+		destroy_spawner()
 	
 func find_a_spawn_location():
 	var spawns = get_tree().get_nodes_in_group("spawn")

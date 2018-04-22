@@ -12,8 +12,6 @@ config_version=3
 
 config/name="Art of the Kill"
 run/main_scene="res://titlescreen.tscn"
-run/disable_stdout=true
-run/disable_stderr=true
 config/icon="res://icon.png"
 
 [autoload]

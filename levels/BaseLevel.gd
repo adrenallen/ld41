@@ -51,8 +51,17 @@ func get_level_data():
 	return get_owner().get_node("LevelData")
 
 func _process(delta):
-	if(!victoryDoorOpen && check_for_win_condition()):
-		open_victory_door()
+	if(check_for_win_condition()):
+		print("Checking for door in win")
+		if(!victoryDoorOpen):
+			
+			open_victory_door()
+	else:
+		print("Checking for door in not win")
+		if(victoryDoorOpen):
+			print("Victory door is open and not win ", check_for_win_condition())
+			close_victory_door()
+			
 	if(Input.is_action_just_pressed("music_toggle")):
 		if get_owner().get_node("Music").playing:
 			get_owner().get_node("Music").stop()
@@ -129,10 +138,15 @@ func find_closest_used_tile(x, y):
 
 func open_victory_door():
 	victoryDoorOpen = true
-	print("open victory")
 	get_owner().get_node("AnimationPlayer").play("openVictoryDoors")
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
+
+func close_victory_door():
+	victoryDoorOpen = false
+	get_owner().get_node("AnimationPlayer").play("closeVictoryDoors")
+	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = false
+	$Area2D.disconnect("body_entered", self, "next_level")
 
 func create_spawner(instances):
 	var spawner = spawnerScene.instance()
