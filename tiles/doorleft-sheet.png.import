@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/greentile.png-ae63bdac9a2a4a162b3e86a1a70a6f9c.stex"
+path="res://.import/doorleft-sheet.png-18b36cd24591129bd27e3d2860ec16dd.stex"
 
 [deps]
 
-source_file="res://tiles/greentile.png"
-source_md5="05cb01a0828b7b3d3ca84abda9c51003"
+source_file="res://tiles/doorleft-sheet.png"
+source_md5="6b1b5f75381ba71c2457768b9fbd8fc5"
 
-dest_files=[ "res://.import/greentile.png-ae63bdac9a2a4a162b3e86a1a70a6f9c.stex" ]
-dest_md5="f829d9f00cbe741884cc167abe24278e"
+dest_files=[ "res://.import/doorleft-sheet.png-18b36cd24591129bd27e3d2860ec16dd.stex" ]
+dest_md5="f4c2e07bf8b90e3ffa27d7463c1739c0"
 
 [params]
 

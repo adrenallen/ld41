@@ -7,10 +7,10 @@ path="res://.import/redhint.png-b9552875515395f773a818bb81e23c33.stex"
 [deps]
 
 source_file="res://tiles/redhint.png"
-source_md5="6a1c1f6b45b2dd6c63afce3c5ba2e6fb"
+source_md5="df38b22c9e0e2e522123978e5e892c8d"
 
 dest_files=[ "res://.import/redhint.png-b9552875515395f773a818bb81e23c33.stex" ]
-dest_md5="9981d8f9a998befc79c55b3dd5f4b000"
+dest_md5="be9b938fd927e99aa090f95c7e6b687b"
 
 [params]
 

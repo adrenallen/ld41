@@ -1,16 +1,20 @@
-[gd_resource type="TileSet" load_steps=12 format=2]
+[gd_resource type="TileSet" load_steps=16 format=2]
 
 [ext_resource path="res://tiles/whitetile.png" type="Texture" id=1]
 [ext_resource path="res://tiles/redtile.png" type="Texture" id=2]
 [ext_resource path="res://tiles/bluetile.png" type="Texture" id=3]
 [ext_resource path="res://tiles/bluetilehint.png" type="Texture" id=4]
-[ext_resource path="res://tiles/greentile.png" type="Texture" id=5]
-[ext_resource path="res://tiles/door1.png" type="Texture" id=6]
-[ext_resource path="res://tiles/door2.png" type="Texture" id=7]
-[ext_resource path="res://tiles/door3.png" type="Texture" id=8]
-[ext_resource path="res://tiles/door4.png" type="Texture" id=9]
-[ext_resource path="res://tiles/greenhint.png" type="Texture" id=10]
-[ext_resource path="res://tiles/redhint.png" type="Texture" id=11]
+[ext_resource path="res://tiles/doorleft1.png" type="Texture" id=5]
+[ext_resource path="res://tiles/doorleft2.png" type="Texture" id=6]
+[ext_resource path="res://tiles/doorright1.png" type="Texture" id=7]
+[ext_resource path="res://tiles/doorright2.png" type="Texture" id=8]
+[ext_resource path="res://tiles/greentile.png" type="Texture" id=9]
+[ext_resource path="res://tiles/door1.png" type="Texture" id=10]
+[ext_resource path="res://tiles/door2.png" type="Texture" id=11]
+[ext_resource path="res://tiles/door3.png" type="Texture" id=12]
+[ext_resource path="res://tiles/door4.png" type="Texture" id=13]
+[ext_resource path="res://tiles/greenhint.png" type="Texture" id=14]
+[ext_resource path="res://tiles/redhint.png" type="Texture" id=15]
 
 [resource]
 
@@ -18,31 +22,31 @@
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 48 )
+0/region = Rect2( 0, 0, 96, 48 )
 0/is_autotile = false
-0/occluder_offset = Vector2( 32, 24 )
-0/navigation_offset = Vector2( 32, 24 )
+0/occluder_offset = Vector2( 48, 24 )
+0/navigation_offset = Vector2( 48, 24 )
 0/shapes = [  ]
 1/name = "redtile"
 1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 64, 48 )
+1/region = Rect2( 0, 0, 96, 48 )
 1/is_autotile = false
-1/occluder_offset = Vector2( 32, 24 )
-1/navigation_offset = Vector2( 32, 24 )
+1/occluder_offset = Vector2( 48, 24 )
+1/navigation_offset = Vector2( 48, 24 )
 1/shapes = [  ]
 2/name = "greentile"
-2/texture = ExtResource( 5 )
+2/texture = ExtResource( 9 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 64, 48 )
+2/region = Rect2( 0, 0, 96, 48 )
 2/is_autotile = false
-2/occluder_offset = Vector2( 32, 24 )
-2/navigation_offset = Vector2( 32, 24 )
+2/occluder_offset = Vector2( 48, 24 )
+2/navigation_offset = Vector2( 48, 24 )
 2/shapes = [  ]
 3/name = "doorclosed_left"
-3/texture = ExtResource( 6 )
+3/texture = ExtResource( 10 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 64, 48 )
@@ -51,7 +55,7 @@
 3/navigation_offset = Vector2( 32, 24 )
 3/shapes = [  ]
 4/name = "doorclosed_right"
-4/texture = ExtResource( 7 )
+4/texture = ExtResource( 11 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 64, 48 )
@@ -60,7 +64,7 @@
 4/navigation_offset = Vector2( 32, 24 )
 4/shapes = [  ]
 5/name = "dooropen_left"
-5/texture = ExtResource( 8 )
+5/texture = ExtResource( 12 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 0, 0, 64, 48 )
@@ -69,7 +73,7 @@
 5/navigation_offset = Vector2( 32, 24 )
 5/shapes = [  ]
 6/name = "dooropen_right"
-6/texture = ExtResource( 9 )
+6/texture = ExtResource( 13 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 64, 48 )
@@ -78,16 +82,16 @@
 6/navigation_offset = Vector2( 32, 24 )
 6/shapes = [  ]
 7/name = "greentilehint"
-7/texture = ExtResource( 10 )
+7/texture = ExtResource( 14 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 64, 48 )
+7/region = Rect2( 0, 0, 96, 48 )
 7/is_autotile = false
-7/occluder_offset = Vector2( 32, 24 )
-7/navigation_offset = Vector2( 32, 24 )
+7/occluder_offset = Vector2( 48, 24 )
+7/navigation_offset = Vector2( 48, 24 )
 7/shapes = [  ]
 8/name = "redhint"
-8/texture = ExtResource( 11 )
+8/texture = ExtResource( 15 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 64, 48 )
@@ -96,40 +100,76 @@
 8/navigation_offset = Vector2( 32, 24 )
 8/shapes = [  ]
 9/name = "redtilehint"
-9/texture = ExtResource( 11 )
+9/texture = ExtResource( 15 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 0, 0, 64, 48 )
+9/region = Rect2( 0, 0, 96, 48 )
 9/is_autotile = false
-9/occluder_offset = Vector2( 32, 24 )
-9/navigation_offset = Vector2( 32, 24 )
+9/occluder_offset = Vector2( 48, 24 )
+9/navigation_offset = Vector2( 48, 24 )
 9/shapes = [  ]
 10/name = "whitetile"
 10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 0, 64, 48 )
+10/region = Rect2( 0, 0, 96, 48 )
 10/is_autotile = false
-10/occluder_offset = Vector2( 32, 24 )
-10/navigation_offset = Vector2( 32, 24 )
+10/occluder_offset = Vector2( 48, 24 )
+10/navigation_offset = Vector2( 48, 24 )
 10/shapes = [  ]
 11/name = "bluetile"
 11/texture = ExtResource( 3 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 0, 64, 48 )
+11/region = Rect2( 0, 0, 96, 48 )
 11/is_autotile = false
-11/occluder_offset = Vector2( 32, 24 )
-11/navigation_offset = Vector2( 32, 24 )
+11/occluder_offset = Vector2( 48, 24 )
+11/navigation_offset = Vector2( 48, 24 )
 11/shapes = [  ]
 12/name = "bluetilehint"
 12/texture = ExtResource( 4 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 0, 0, 64, 48 )
+12/region = Rect2( 0, 0, 96, 48 )
 12/is_autotile = false
-12/occluder_offset = Vector2( 32, 24 )
-12/navigation_offset = Vector2( 32, 24 )
+12/occluder_offset = Vector2( 48, 24 )
+12/navigation_offset = Vector2( 48, 24 )
 12/shapes = [  ]
+13/name = "doorleft_closed"
+13/texture = ExtResource( 5 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 96, 128 )
+13/is_autotile = false
+13/occluder_offset = Vector2( 48, 64 )
+13/navigation_offset = Vector2( 48, 64 )
+13/shapes = [  ]
+14/name = "doorleft_open"
+14/texture = ExtResource( 6 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 96, 128 )
+14/is_autotile = false
+14/occluder_offset = Vector2( 48, 64 )
+14/navigation_offset = Vector2( 48, 64 )
+14/shapes = [  ]
+15/name = "doorright_closed"
+15/texture = ExtResource( 7 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 96, 128 )
+15/is_autotile = false
+15/occluder_offset = Vector2( 48, 64 )
+15/navigation_offset = Vector2( 48, 64 )
+15/shapes = [  ]
+16/name = "doorright_open"
+16/texture = ExtResource( 8 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 96, 128 )
+16/is_autotile = false
+16/occluder_offset = Vector2( 48, 64 )
+16/navigation_offset = Vector2( 48, 64 )
+16/shapes = [  ]
 _sections_unfolded = [ "0" ]
 

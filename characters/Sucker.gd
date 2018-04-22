@@ -24,7 +24,7 @@ func _physics_process(delta):
 		var mapCoords = get_position_on_map()
 		var currentTileCoords = global.get_tile_map_container(self).get_tile_coords_by_game_coords(mapCoords.x, mapCoords.y)
 		if(targetCell.x != currentTileCoords.x || targetCell.y != currentTileCoords.y):
-			move_character_on_vector(target - get_position_on_map())
+			move_character_on_vector(target - get_position_on_map() + Vector2(0, 15))
 		else:
 			isSucking = true
 			global.play_animation_if_not_playing("suck", $AnimationPlayer)

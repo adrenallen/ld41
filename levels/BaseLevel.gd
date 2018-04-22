@@ -35,10 +35,10 @@ func _process(delta):
 
 # gets the tile coords based on game coords
 func get_tile_coords_by_game_coords(x,y):
-	return Vector2(int(x/$ActiveTileMap.cell_size.x), int(y/$ActiveTileMap.cell_size.y))
+	return $ActiveTileMap.world_to_map(Vector2(x,y))
 
 func convert_tile_coords_to_game_coords(x,y):
-	return Vector2(int(x*$ActiveTileMap.cell_size.x)+int($ActiveTileMap.cell_size.x/2), int(y*$ActiveTileMap.cell_size.y)+int($ActiveTileMap.cell_size.y/2))
+	return $ActiveTileMap.map_to_world(Vector2(x,y))
 
 #converts the tile at this position to the specified color
 func convert_tile_to_color(x,y,color):
@@ -81,8 +81,10 @@ func find_closest_used_tile(x, y):
 
 func open_victory_door():
 	victoryDoorOpen = true
-	$WhiteTileMap.set_cell(7, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_left"))
-	$WhiteTileMap.set_cell(8, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_right"))
+#	$WhiteTileMap.set_cell(7, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_left"))
+#	$WhiteTileMap.set_cell(8, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_right"))
+	print("open victory")
+	get_owner().get_node("AnimationPlayer").play("openVictoryDoors")
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
 	

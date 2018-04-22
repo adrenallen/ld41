@@ -7,10 +7,10 @@ path="res://.import/bluetile.png-614c148c8d4114db98b4720456982ead.stex"
 [deps]
 
 source_file="res://tiles/bluetile.png"
-source_md5="f25c1973f9c2852041474813b40225be"
+source_md5="4b2fece67aa0d24ab227e89b459ab43f"
 
 dest_files=[ "res://.import/bluetile.png-614c148c8d4114db98b4720456982ead.stex" ]
-dest_md5="59ae1baeac9e5200afa3d3ff0c209bd3"
+dest_md5="146e12a44e16e08c0803eefbe6ad6c65"
 
 [params]
 
