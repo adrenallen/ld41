@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
