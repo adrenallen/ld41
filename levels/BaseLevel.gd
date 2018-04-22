@@ -42,12 +42,20 @@ func convert_tile_coords_to_game_coords(x,y):
 
 #converts the tile at this position to the specified color
 func convert_tile_to_color(x,y,color):
+	convert_tile_to_index(x, y, $ActiveTileMap.tile_set.find_tile_by_name(color+"tile"))
+
+func convert_tile_to_index(x,y,index):
 	var tile = get_tile_coords_by_game_coords(x,y)
-	$ActiveTileMap.set_cell(tile.x, tile.y, $ActiveTileMap.tile_set.find_tile_by_name(color+"tile"))
+	$ActiveTileMap.set_cell(tile.x, tile.y, index)
+
+func get_cell_width():
+	return $ActiveTileMap.cell_size.x;
+	
+func get_cell_height():
+	return $ActiveTileMap.cell_size.y;
 
 func clear_tile(x,y):
-	var tile = get_tile_coords_by_game_coords(x,y)
-	$ActiveTileMap.set_cell(tile.x, tile.y, -1)
+	convert_tile_to_index(x, y, -1)
 
 #Check if our player's tile map matches victory conditions
 func check_for_win_condition():
@@ -81,8 +89,6 @@ func find_closest_used_tile(x, y):
 
 func open_victory_door():
 	victoryDoorOpen = true
-#	$WhiteTileMap.set_cell(7, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_left"))
-#	$WhiteTileMap.set_cell(8, 0, $WhiteTileMap.tile_set.find_tile_by_name("dooropen_right"))
 	print("open victory")
 	get_owner().get_node("AnimationPlayer").play("openVictoryDoors")
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true

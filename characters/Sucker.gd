@@ -41,5 +41,25 @@ func finish_sucking(binds=null):
 	colorsSucked.push_front (tileMapObj.get_cell_tile_index_by_game_coords(mapPos.x, mapPos.y))
 	
 	tileMapObj.clear_tile(mapPos.x, mapPos.y)
+	
+#override to explode before dying
+func death():
+	explode_sucked_colors()
+	.death() #base call
 
-
+func explode_sucked_colors():
+	var mapObj = global.get_tile_map_container(self)
+	var explodeDirections = []
+	explodeDirections.push_front(Vector2(mapObj.get_cell_width(),0))
+	explodeDirections.push_front(Vector2(mapObj.get_cell_width(),mapObj.get_cell_height()))
+	explodeDirections.push_front(Vector2(0, mapObj.get_cell_height()))
+	explodeDirections.push_front(Vector2(-1*mapObj.get_cell_width(),0))
+	explodeDirections.push_front(Vector2(-1*mapObj.get_cell_width(),-1*mapObj.get_cell_height()))
+	explodeDirections.push_front(Vector2(0, -1*mapObj.get_cell_height()))
+	explodeDirections.push_front(Vector2(-1*mapObj.get_cell_width(),mapObj.get_cell_height()))
+	explodeDirections.push_front(Vector2(mapObj.get_cell_width(),-1*mapObj.get_cell_height()))
+	var mapPos = get_position_on_map()
+	for color in colorsSucked:
+		mapPos += explodeDirections[rand_range(0,explodeDirections.size())]
+		mapObj.convert_tile_to_index(mapPos.x, mapPos.y, color)
+		

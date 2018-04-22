@@ -7,10 +7,10 @@ path="res://.import/greentile.png-ae63bdac9a2a4a162b3e86a1a70a6f9c.stex"
 [deps]
 
 source_file="res://tiles/greentile.png"
-source_md5="05cb01a0828b7b3d3ca84abda9c51003"
+source_md5="daf041c519603a5f64dd38a507e006d5"
 
 dest_files=[ "res://.import/greentile.png-ae63bdac9a2a4a162b3e86a1a70a6f9c.stex" ]
-dest_md5="f829d9f00cbe741884cc167abe24278e"
+dest_md5="cd5cd1a9ac5057b8e63cd1842d186bc6"
 
 [params]
 
