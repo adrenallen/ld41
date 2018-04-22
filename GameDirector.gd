@@ -45,19 +45,32 @@ func check_and_spawn_enemies():
 	if(enemies.size() > levelData.maxEnemies):
 		return #do nothing we have max enemies
 	
-	if(enemyColorCount["green"] < levelData.greenEnemies):
-		spawn_enemy("green")	
-	if(enemyColorCount["red"] < levelData.redEnemies):
-		spawn_enemy("red")
-	if(enemyColorCount["blue"] < levelData.blueEnemies):
-		spawn_enemy("blue")
+	var colorsToSpawn = []
 	
+	if(enemyColorCount["green"] < levelData.greenEnemies):
+		colorsToSpawn.push_front("green")
+	if(enemyColorCount["red"] < levelData.redEnemies):
+		colorsToSpawn.push_front("red")
+	if(enemyColorCount["blue"] < levelData.blueEnemies):
+		colorsToSpawn.push_front("blue")
 		
-func spawn_enemy(color=null):
-	if(color == null):
-		return
-	levelNode.spawn_instance_on_random_point(enemyList[colorEnemyList[color][0]].instance())
+	var enemiesToSpawn = get_enemies_of_color(colorsToSpawn)
+
+	levelNode.create_spawner(enemiesToSpawn)	
 	levelNode.spawnTimer.start()
+
+func get_enemies_of_color(colors):
+	var instances = []
+	for color in colors:
+		instances.push_front(enemyList[colorEnemyList[color][0]].instance())
+	return instances
+	
+	
+#func spawn_enemy(color=null):
+#	if(color == null):
+#		return
+#	levelNode.spawn_instance_on_random_point(enemyList[colorEnemyList[color][0]].instance())
+#	levelNode.spawnTimer.start()
 		
 	
 func init_director(levelNode):

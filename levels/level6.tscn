@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sounds/victorydooropen.wav" type="AudioStream" id=10]
 [ext_resource path="res://ui.tscn" type="PackedScene" id=11]
 [ext_resource path="res://sounds/ingame.wav" type="AudioStream" id=12]
+[ext_resource path="res://Spawns.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -422,30 +423,14 @@ position = Vector2( 211.635, 464.267 )
 
 position = Vector2( 906.374, 487.536 )
 
-[node name="Spawns" type="Node2D" parent="." index="4"]
-
-[node name="Position2D5" type="Position2D" parent="Spawns" index="0" groups=[
-"spawn",
-]]
-
-position = Vector2( 838.608, 769.597 )
-scale = Vector2( 2.93034, 1.91201 )
-
-[node name="Position2D6" type="Position2D" parent="Spawns" index="1" groups=[
-"spawn",
-]]
-
-position = Vector2( 271.847, 777.134 )
-scale = Vector2( 2.93034, 1.91201 )
-
-[node name="SpawnTimer" type="Timer" parent="." index="5"]
+[node name="SpawnTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
 
-[node name="LevelData" type="Node" parent="." index="6"]
+[node name="LevelData" type="Node" parent="." index="5"]
 
 script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
@@ -456,7 +441,7 @@ redEnemies = 8
 greenEnemies = 0
 blueEnemies = 1
 
-[node name="VictoryDoor" type="Sprite" parent="." index="7"]
+[node name="VictoryDoor" type="Sprite" parent="." index="6"]
 
 position = Vector2( 537.397, 59.7259 )
 z_index = 2
@@ -464,7 +449,7 @@ texture = ExtResource( 8 )
 vframes = 2
 _sections_unfolded = [ "Animation", "Z Index" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -475,9 +460,9 @@ anims/matchingTileSound = SubResource( 3 )
 anims/openVictoryDoors = SubResource( 4 )
 blend_times = [  ]
 
-[node name="UI" parent="." index="9" instance=ExtResource( 11 )]
+[node name="UI" parent="." index="8" instance=ExtResource( 11 )]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="10"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="9"]
 
 position = Vector2( 538.565, 54.415 )
 stream = ExtResource( 9 )
@@ -488,12 +473,14 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="11"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="10"]
 
 stream = ExtResource( 12 )
 volume_db = -25.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Spawns" parent="." index="11" instance=ExtResource( 13 )]
 
 

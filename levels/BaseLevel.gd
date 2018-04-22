@@ -6,6 +6,7 @@ var spawnTimer
 const tileGoodPointValue = 100
 const tileBadPointValue = -20
 
+onready var spawnerScene = preload("res://characters/spawner.tscn")
 
 func _enter_tree():
 	global.clear_leftover_enemies()
@@ -132,10 +133,20 @@ func open_victory_door():
 	get_owner().get_node("AnimationPlayer").play("openVictoryDoors")
 	get_owner().get_node("Walls/DoorWall/CollisionShape2D").disabled = true
 	$Area2D.connect("body_entered", self, "next_level", [], CONNECT_ONESHOT)
+
+func create_spawner(instances):
+	var spawner = spawnerScene.instance()
+	get_tree().get_root().add_child(spawner)	
+	#if spawner finds a spot init it and less go
+	if spawner.find_a_spawn_location():
+		spawner.init_spawner(instances)	
+		spawner.initiate_spawn()
 	
-func spawn_instance_on_random_point(instance):
-	var spawns = get_tree().get_nodes_in_group("spawn")
-	if(spawns.size() > 0):
-		var spawn = spawns[rand_range(0, spawns.size()-1)]
-		instance.position = spawn.position
-		get_tree().get_root().add_child(instance)
+	
+#
+#func spawn_instance_on_random_point(instance):
+#	var spawns = get_tree().get_nodes_in_group("spawn")
+#	if(spawns.size() > 0):
+#		var spawn = spawns[rand_range(0, spawns.size()-1)]
+#		instance.position = spawn.position
+#		get_tree().get_root().add_child(instance)

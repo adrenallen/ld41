@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://levels/level1.gd" type="Script" id=1]
 [ext_resource path="res://tiles/tiles.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sounds/victorydooropen.wav" type="AudioStream" id=10]
 [ext_resource path="res://ui.tscn" type="PackedScene" id=11]
 [ext_resource path="res://sounds/ingame.wav" type="AudioStream" id=12]
+[ext_resource path="res://Spawns.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -23,7 +24,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource_name = "matchingTileSound"
 length = 1.0
@@ -54,7 +55,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
@@ -96,7 +97,7 @@ tracks/2/keys = {
 "values": [ ExtResource( 10 ) ]
 }
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -410,23 +411,14 @@ shape = SubResource( 2 )
 
 position = Vector2( 842.184, 215.643 )
 
-[node name="Spawns" type="Node2D" parent="." index="4"]
-
-[node name="Position2D6" type="Position2D" parent="Spawns" index="0" groups=[
-"spawn",
-]]
-
-position = Vector2( 271.847, 777.134 )
-scale = Vector2( 2.93034, 1.91201 )
-
-[node name="SpawnTimer" type="Timer" parent="." index="5"]
+[node name="SpawnTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = true
 autostart = false
 
-[node name="LevelData" type="Node" parent="." index="6"]
+[node name="LevelData" type="Node" parent="." index="5"]
 
 script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
@@ -437,7 +429,7 @@ redEnemies = 0
 greenEnemies = 5
 blueEnemies = 0
 
-[node name="VictoryDoor" type="Sprite" parent="." index="7"]
+[node name="VictoryDoor" type="Sprite" parent="." index="6"]
 
 position = Vector2( 537.397, 59.7259 )
 z_index = 2
@@ -445,20 +437,20 @@ texture = ExtResource( 8 )
 vframes = 2
 _sections_unfolded = [ "Animation", "Z Index" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/matchingTileSound = SubResource( 4 )
-anims/openVictoryDoors = SubResource( 3 )
+anims/matchingTileSound = SubResource( 3 )
+anims/openVictoryDoors = SubResource( 4 )
 blend_times = [  ]
 
-[node name="UI" parent="." index="9" instance=ExtResource( 11 )]
+[node name="UI" parent="." index="8" instance=ExtResource( 11 )]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="10"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="9"]
 
 position = Vector2( 538.565, 54.415 )
 stream = ExtResource( 9 )
@@ -469,12 +461,14 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="." index="11"]
+[node name="Music" type="AudioStreamPlayer" parent="." index="10"]
 
 stream = ExtResource( 12 )
 volume_db = -25.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Spawns" parent="." index="11" instance=ExtResource( 13 )]
 
 

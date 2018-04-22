@@ -1,0 +1,119 @@
+[gd_scene format=2]
+
+[node name="Spawns" type="Node2D"]
+
+[node name="Position2D" type="Position2D" parent="." index="0" groups=[
+"spawn",
+]]
+
+position = Vector2( 156.443, 195.894 )
+
+[node name="Position2D2" type="Position2D" parent="." index="1" groups=[
+"spawn",
+]]
+
+position = Vector2( 330.572, 182.291 )
+
+[node name="Position2D3" type="Position2D" parent="." index="2" groups=[
+"spawn",
+]]
+
+position = Vector2( 684.27, 157.804 )
+
+[node name="Position2D4" type="Position2D" parent="." index="3" groups=[
+"spawn",
+]]
+
+position = Vector2( 843.435, 259.832 )
+
+[node name="Position2D5" type="Position2D" parent="." index="4" groups=[
+"spawn",
+]]
+
+position = Vector2( 693.793, 379.546 )
+
+[node name="Position2D6" type="Position2D" parent="." index="5" groups=[
+"spawn",
+]]
+
+position = Vector2( 542.791, 282.959 )
+
+[node name="Position2D7" type="Position2D" parent="." index="6" groups=[
+"spawn",
+]]
+
+position = Vector2( 299.283, 331.932 )
+
+[node name="Position2D8" type="Position2D" parent="." index="7" groups=[
+"spawn",
+]]
+
+position = Vector2( 122.434, 414.915 )
+
+[node name="Position2D9" type="Position2D" parent="." index="8" groups=[
+"spawn",
+]]
+
+position = Vector2( 257.112, 459.808 )
+
+[node name="Position2D10" type="Position2D" parent="." index="9" groups=[
+"spawn",
+]]
+
+position = Vector2( 148.281, 525.106 )
+
+[node name="Position2D11" type="Position2D" parent="." index="10" groups=[
+"spawn",
+]]
+
+position = Vector2( 489.736, 512.863 )
+
+[node name="Position2D12" type="Position2D" parent="." index="11" groups=[
+"spawn",
+]]
+
+position = Vector2( 771.335, 503.34 )
+
+[node name="Position2D13" type="Position2D" parent="." index="12" groups=[
+"spawn",
+]]
+
+position = Vector2( 933.22, 436.681 )
+
+[node name="Position2D14" type="Position2D" parent="." index="13" groups=[
+"spawn",
+]]
+
+position = Vector2( 425.799, 376.825 )
+
+[node name="Position2D15" type="Position2D" parent="." index="14" groups=[
+"spawn",
+]]
+
+position = Vector2( 487.016, 176.849 )
+
+[node name="Position2D16" type="Position2D" parent="." index="15" groups=[
+"spawn",
+]]
+
+position = Vector2( 797.182, 652.982 )
+
+[node name="Position2D17" type="Position2D" parent="." index="16" groups=[
+"spawn",
+]]
+
+position = Vector2( 500.62, 685.631 )
+
+[node name="Position2D18" type="Position2D" parent="." index="17" groups=[
+"spawn",
+]]
+
+position = Vector2( 176.849, 682.91 )
+
+[node name="Position2D19" type="Position2D" parent="." index="18" groups=[
+"spawn",
+]]
+
+position = Vector2( 869.282, 168.687 )
+
+
