@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/goodtile.wav-4aa7a61f54ec0f42f087769be1751c3f.sample"
+
+[deps]
+
+source_file="res://sounds/goodtile.wav"
+source_md5="18b054f71523f2885032d53fabcd9978"
+
+dest_files=[ "res://.import/goodtile.wav-4aa7a61f54ec0f42f087769be1751c3f.sample" ]
+dest_md5="b92940df24d36df36ad89429f00f5a54"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

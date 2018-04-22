@@ -60,8 +60,20 @@ func convert_tile_to_color(x,y,color):
 
 func convert_tile_to_index(x,y,index):
 	var tile = get_tile_coords_by_game_coords(x,y)
+	
+	check_for_matching_tile_play_sound(tile.x, tile.y, index)
+	
 	$ActiveTileMap.set_cell(tile.x, tile.y, index)
-
+	
+#if a matching tile is filled then sound for it
+func check_for_matching_tile_play_sound(x,y,index):
+	var victoryTile = $VictoryTileMap.get_cell(x,y)
+	var currentActiveTile = $ActiveTileMap.get_cell(x,y)
+	if victoryTile > 0 && currentActiveTile != victoryTile:
+		if victoryTile == index:
+			get_owner().get_node("AnimationPlayer").play("matchingTileSound")
+	
+	
 func get_cell_width():
 	return $ActiveTileMap.cell_size.x;
 	
