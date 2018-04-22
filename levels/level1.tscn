@@ -170,6 +170,8 @@ position = Vector2( 520.561, 535.293 )
 
 [node name="WestWall" type="StaticBody2D" parent="Walls/Colliders" index="0"]
 
+position = Vector2( 11.8575, 752.589 )
+rotation = -3.05433
 input_pickable = false
 collision_layer = 1024
 collision_mask = 0
@@ -177,16 +179,20 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/WestWall" index="0"]
 
 position = Vector2( 29.7075, 279.558 )
 scale = Vector2( 2.79182, 37.1453 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="EastWall" type="StaticBody2D" parent="Walls/Colliders" index="1"]
 
+position = Vector2( 0.341697, -115.03 )
+rotation = 3.05433
+scale = Vector2( 1.01072, 1 )
 input_pickable = false
 collision_layer = 1024
 collision_mask = 0
@@ -194,13 +200,14 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Colliders/EastWall" index="0"]
 
-position = Vector2( 994.138, 300.103 )
+position = Vector2( -960.411, -574.72 )
 scale = Vector2( 2.79182, 27.3767 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="SouthWall" type="StaticBody2D" parent="Walls/Colliders" index="2"]
 
@@ -254,9 +261,9 @@ position = Vector2( 199.723, 14.1499 )
 scale = Vector2( 19.9706, 3.3795 )
 shape = SubResource( 2 )
 
-[node name="Art" type="Node2D" parent="Walls" index="1"]
+[node name="NorthArt" type="Node2D" parent="Walls" index="1"]
 
-[node name="NorthWallBottomARt" type="Sprite" parent="Walls/Art" index="0"]
+[node name="NorthWallBottomARt" type="Sprite" parent="Walls/NorthArt" index="0"]
 
 position = Vector2( 514.358, 102.226 )
 z_index = 1
@@ -265,7 +272,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1028, 3 )
 _sections_unfolded = [ "Region", "Z Index" ]
 
-[node name="NorthWallArt" type="Sprite" parent="Walls/Art" index="1"]
+[node name="NorthWallArt" type="Sprite" parent="Walls/NorthArt" index="1"]
 
 position = Vector2( 514.02, 7.43216 )
 texture = ExtResource( 5 )
@@ -273,7 +280,55 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1028, 192 )
 _sections_unfolded = [ "Region" ]
 
-[node name="DoorWall" type="StaticBody2D" parent="Walls" index="2"]
+[node name="East art" type="Node2D" parent="Walls" index="2"]
+
+position = Vector2( 1067.31, 92.5056 )
+rotation = 1.48353
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="NorthWallBottomARt" type="Sprite" parent="Walls/East art" index="0"]
+
+position = Vector2( 514.358, 102.226 )
+z_index = 1
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1028, 3 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="NorthWallArt" type="Sprite" parent="Walls/East art" index="1"]
+
+position = Vector2( 514.02, 7.43216 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1028, 192 )
+_sections_unfolded = [ "Region" ]
+
+[node name="west art" type="Node2D" parent="Walls" index="3"]
+
+position = Vector2( -128.212, 1116.66 )
+rotation = -1.48353
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="NorthWallBottomARt" type="Sprite" parent="Walls/west art" index="0"]
+
+position = Vector2( 514.358, 102.226 )
+z_index = 1
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1028, 3 )
+_sections_unfolded = [ "Region", "Z Index" ]
+
+[node name="NorthWallArt" type="Sprite" parent="Walls/west art" index="1"]
+
+position = Vector2( 514.02, 7.43216 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1028, 192 )
+_sections_unfolded = [ "Region" ]
+
+[node name="DoorWall" type="StaticBody2D" parent="Walls" index="4"]
 
 position = Vector2( 0, 53 )
 input_pickable = false
