@@ -137,7 +137,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="UI" type="Node2D"]
+[node name="UI" type="Node2D" index="0"]
 
 z_index = 4050
 script = ExtResource( 1 )

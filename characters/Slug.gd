@@ -47,7 +47,7 @@ func _physics_process(delta):
 	if(!isDead):
 		if((find_player_position() - position).length() <= chasePlayerDistance):
 			move_character_towards_player()
-			if(check_if_player_close_for_attack()):
+			if(!isAttacking && check_if_player_close_for_attack()):
 				attack()
 		else:
 			move_character_on_vector((targetPosition-position).normalized())
