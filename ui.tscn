@@ -274,7 +274,18 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="EndGamePopup" type="Popup" parent="." index="5"]
+[node name="LoseGameSound" type="AudioStreamPlayer2D" parent="." index="5"]
+
+position = Vector2( 497.716, 315.666 )
+stream = ExtResource( 3 )
+volume_db = -15.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="EndGamePopup" type="Popup" parent="." index="6"]
 
 visible = false
 anchor_left = 0.0
