@@ -14,17 +14,17 @@
 [ext_resource path="res://sounds/ingame.wav" type="AudioStream" id=12]
 [ext_resource path="res://Spawns.tscn" type="PackedScene" id=13]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12.4085, 10 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=3]
 
 resource_name = "closeVictoryDoors"
 length = 1.0
@@ -67,7 +67,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 
 resource_name = "matchingTileSound"
 length = 1.0
@@ -98,7 +98,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 
 length = 1.0
 loop = false
@@ -256,7 +256,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 31.2626, 149.933 )
 scale = Vector2( 6.92605, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Characters" type="Node2D" parent="." index="1"]
 
@@ -287,7 +287,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 29.7075, 279.558 )
 scale = Vector2( 2.79182, 37.1453 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EastWall" type="StaticBody2D" parent="Walls/Colliders" index="1"]
@@ -308,7 +308,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( -960.411, -574.72 )
 scale = Vector2( 2.79182, 27.3767 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SouthWall" type="StaticBody2D" parent="Walls/Colliders" index="2"]
@@ -326,7 +326,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 538.968, 609.749 )
 scale = Vector2( 41.5067, 3.3795 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="NorthWall2" type="StaticBody2D" parent="Walls/Colliders" index="3"]
 
@@ -344,7 +344,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 823.518, 14.2671 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="NorthWall" type="StaticBody2D" parent="Walls/Colliders" index="4"]
 
@@ -362,7 +362,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 199.723, 14.1499 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="NorthArt" type="Node2D" parent="Walls" index="1"]
 
@@ -446,7 +446,7 @@ bounce = 0.0
 
 position = Vector2( 513.038, 15.5939 )
 scale = Vector2( 19.9706, 3.3795 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="Enemies" type="Node2D" parent="." index="3"]
 
@@ -479,10 +479,11 @@ script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
 nextLevel = "level3"
 maxEnemies = 20
-maxDifficulty = 40
+difficulty = 40
 redEnemies = 0
 greenEnemies = 10
 blueEnemies = 0
+slugs = 0
 
 [node name="VictoryDoor" type="Sprite" parent="." index="6"]
 
@@ -499,9 +500,9 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/closeVictoryDoors = SubResource( 9 )
-anims/matchingTileSound = SubResource( 7 )
-anims/openVictoryDoors = SubResource( 8 )
+anims/closeVictoryDoors = SubResource( 3 )
+anims/matchingTileSound = SubResource( 4 )
+anims/openVictoryDoors = SubResource( 5 )
 blend_times = [  ]
 
 [node name="UI" parent="." index="8" instance=ExtResource( 11 )]

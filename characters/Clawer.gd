@@ -3,10 +3,10 @@ extends "BasicEnemy.gd"
 
 func _ready():
 	attackTriggerDistance = 64
-	damage = 15
+	damage = 12
 	bloodColor = "red"
 	maxMoveSpeed = 150 
-	health = 200
+	health = 150
 	set_process(true)
 	set_physics_process(true)
 
