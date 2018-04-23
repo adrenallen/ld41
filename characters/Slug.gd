@@ -51,7 +51,6 @@ func _physics_process(delta):
 				attack()
 		else:
 			move_character_on_vector((targetPosition-position).normalized())
-			print(velocity.length())
 			if((targetPosition-position).length() <= goalDistanceToTarget):
 				find_a_spawn_location()
 		leave_trail()
