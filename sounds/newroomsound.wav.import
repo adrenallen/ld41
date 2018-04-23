@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/newroomsound.wav-8a2ef875fbeb7c754c2e1d7a51aa33f4.sample"
+
+[deps]
+
+source_file="res://sounds/newroomsound.wav"
+source_md5="9aed50efeffb3b8bffaf6c96ace33c16"
+
+dest_files=[ "res://.import/newroomsound.wav-8a2ef875fbeb7c754c2e1d7a51aa33f4.sample" ]
+dest_md5="cc88a6c97f2d8e4567446191f0bd08fc"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

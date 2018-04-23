@@ -7,8 +7,10 @@ onready var endScene = preload("res://endgame.tscn")
 
 func _ready():
 	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	
+	#7 minutes before submission hack to make a sound
+	if(global.get_tile_map_container(self).get_level_data().nextLevel != "level1" && global.get_tile_map_container(self).get_level_data().nextLevel != "level2"):
+		$NewRoomSound.play()
 
 func lose_game():
 	var endSceneInstance = endScene.instance()

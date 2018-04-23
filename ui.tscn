@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui.gd" type="Script" id=1]
 [ext_resource path="res://levels/ProgressBar.gd" type="Script" id=2]
 [ext_resource path="res://sounds/lose.wav" type="AudioStream" id=3]
 [ext_resource path="res://sounds/playerhurt.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/newroomsound.wav" type="AudioStream" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -137,7 +138,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="UI" type="Node2D"]
+[node name="UI" type="Node2D" index="0"]
 
 z_index = 4050
 script = ExtResource( 1 )
@@ -285,7 +286,18 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="EndGamePopup" type="Popup" parent="." index="6"]
+[node name="NewRoomSound" type="AudioStreamPlayer2D" parent="." index="6"]
+
+position = Vector2( 497.716, 315.666 )
+stream = ExtResource( 5 )
+volume_db = -15.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="EndGamePopup" type="Popup" parent="." index="7"]
 
 visible = false
 anchor_left = 0.0
