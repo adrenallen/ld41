@@ -52,14 +52,10 @@ func get_level_data():
 
 func _process(delta):
 	if(check_for_win_condition()):
-		print("Checking for door in win")
 		if(!victoryDoorOpen):
-			
 			open_victory_door()
 	else:
-		print("Checking for door in not win")
 		if(victoryDoorOpen):
-			print("Victory door is open and not win ", check_for_win_condition())
 			close_victory_door()
 			
 	if(Input.is_action_just_pressed("music_toggle")):
@@ -80,6 +76,9 @@ func convert_tile_coords_to_game_coords(x,y):
 #converts the tile at this position to the specified color
 func convert_tile_to_color(x,y,color):
 	convert_tile_to_index(x, y, $ActiveTileMap.tile_set.find_tile_by_name(color+"tile"))
+
+func get_tile_index_by_color_name(color):
+	return $ActiveTileMap.tile_set.find_tile_by_name(color+"tile")
 
 func convert_tile_to_index(x,y,index):
 	var tile = get_tile_coords_by_game_coords(x,y)

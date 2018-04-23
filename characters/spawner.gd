@@ -17,7 +17,9 @@ func initiate_spawn():
 func find_a_spawn_location():
 	var spawns = get_tree().get_nodes_in_group("spawn")
 	if(spawns.size() > 0):
-		var spawn = spawns[rand_range(0, spawns.size()-1)]
+		randomize()
+		var randNum = floor(rand_range(0, spawns.size()))
+		var spawn = spawns[randNum]
 		position = spawn.position
 		z_index = position.y + 100
 		return true

@@ -28,9 +28,9 @@ func _process(delta):
 	flip_based_on_velocity()
 	
 	if(!isAttacking && !isSucking):
-		if(velocity.length() > 6):
+		if(velocity.length() > minRunAnimSpeed):
 			global.play_animation_if_not_playing("run", $AnimationPlayer)
-		elif(velocity.length() <= 6):
+		elif(velocity.length() <= minRunAnimSpeed):
 			global.play_animation_if_not_playing("idle", $AnimationPlayer)
 	
 func move_character():

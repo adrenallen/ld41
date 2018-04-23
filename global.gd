@@ -4,9 +4,12 @@ extends Node
 # var a = 2
 # var b = "textvar"
 var playerHealth
-var maxPlayerHealth = 150
+var maxPlayerHealth = 100
 var playerScore = 0
 var shouldPlayMusic = true
+
+func rand_int(from, to):
+	return range(from,to)[randi()%range(from,to).size()]
 
 func _ready():
 	if playerHealth == null :

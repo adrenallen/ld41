@@ -79,13 +79,17 @@ autostart = true
 
 [node name="finalscore" type="Sprite" parent="." index="5"]
 
-position = Vector2( 409.046, 223.599 )
+position = Vector2( 400.046, 223.599 )
+z_index = 20
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="FinalScoreStretch" type="Node2D" parent="." index="6"]
 
-position = Vector2( 608.794, 185.565 )
+position = Vector2( 603.794, 186.565 )
 scale = Vector2( 3.00825, 1.81632 )
+z_index = 50
+_sections_unfolded = [ "Z Index" ]
 
 [node name="FinalScoreValue" type="Label" parent="FinalScoreStretch" index="0"]
 
@@ -94,9 +98,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -32.0
-margin_top = 15.0
+margin_top = 14.0
 margin_right = 75.0
-margin_bottom = 37.0
+margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -110,5 +114,23 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Panel" type="Panel" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 305.0
+margin_top = 207.0
+margin_right = 673.0
+margin_bottom = 239.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_styles" ]
 
 

@@ -18,9 +18,9 @@ func _process(delta):
 	flip_based_on_velocity()
 	
 	if(!isAttacking && !isCleaning):
-		if(velocity.length() > 6):
+		if(velocity.length() > minRunAnimSpeed):
 			global.play_animation_if_not_playing("run", $AnimationPlayer)
-		elif(velocity.length() <= 6):
+		elif(velocity.length() <= minRunAnimSpeed):
 			global.play_animation_if_not_playing("idle", $AnimationPlayer)
 	
 func _physics_process(delta):
@@ -50,7 +50,6 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 	
 	if(Input.is_action_pressed("ui_accept") && !isAttacking):
-		print("Attacking")
 		attack()
 		
 	if(Input.is_action_pressed("player_clean") && !isCleaning && !isAttacking):
@@ -67,7 +66,6 @@ func do_attack_damage():
 		if(hitBox.get_owner().is_in_group("enemy")):
 			var enemy = hitBox.get_owner()
 			enemy.take_damage(damage)
-			print(enemy, " took damage of ", damage)
 			if(isFlippedH):
 				enemy.take_knockback(Vector2(-knockback, 0))
 			else:

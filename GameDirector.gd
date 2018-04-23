@@ -5,7 +5,8 @@ var levelNode
 onready var enemyList = {
 	"clawer": preload("res://characters/Clawer.tscn"),
 	"enemy1": preload("res://characters/Enemy1.tscn"),
-	"sucker": preload("res://characters/Sucker.tscn")
+	"sucker": preload("res://characters/Sucker.tscn"),
+	"slug": preload("res://characters/Slug.tscn")
 }
 
 var colorEnemyList = {
@@ -53,8 +54,14 @@ func check_and_spawn_enemies():
 		colorsToSpawn.push_front("red")
 	if(enemyColorCount["blue"] < levelData.blueEnemies):
 		colorsToSpawn.push_front("blue")
-		
+	
 	var enemiesToSpawn = get_enemies_of_color(colorsToSpawn)
+	
+	var slugs = levelNode.get_tree().get_nodes_in_group("slug")
+	if(levelData.slugs > slugs.size()):
+		randomize()
+		if(floor(rand_range(1, 100)) < levelData.difficulty):
+			enemiesToSpawn.push_front(enemyList["slug"].instance())
 
 	levelNode.create_spawner(enemiesToSpawn)	
 	levelNode.spawnTimer.start()

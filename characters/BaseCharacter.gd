@@ -8,6 +8,8 @@ var damage = 10
 var knockback = 2000
 var isAttacking = false
 
+var minRunAnimSpeed =6
+
 var isFlippedH = false
 
 var isDead = false
