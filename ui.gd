@@ -13,7 +13,8 @@ func _ready():
 func lose_game():
 	var endSceneInstance = endScene.instance()
 	global.get_tile_map_container(self).get_owner().get_node("Music").stop()
-	$AnimationPlayer.play("loseGame")
+	$AnimationPlayer.stop()
+	$AnimationPlayer.queue("loseGame")
 	endSceneInstance.z_index = 4050
 	$ProgressBar.visible = false
 	$ScoreBox.visible = false
