@@ -479,10 +479,11 @@ script = ExtResource( 7 )
 _sections_unfolded = [ "Pause" ]
 nextLevel = "level7"
 maxEnemies = 20
-maxDifficulty = 40
-redEnemies = 5
+difficulty = 40
+redEnemies = 2
 greenEnemies = 9
 blueEnemies = 1
+slugs = 0
 
 [node name="VictoryDoor" type="Sprite" parent="." index="6"]
 

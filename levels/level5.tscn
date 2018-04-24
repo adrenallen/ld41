@@ -141,7 +141,7 @@ tracks/2/keys = {
 "values": [ ExtResource( 10 ) ]
 }
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -489,7 +489,7 @@ _sections_unfolded = [ "Pause" ]
 nextLevel = "level6"
 maxEnemies = 20
 difficulty = 40
-redEnemies = 3
+redEnemies = 2
 greenEnemies = 10
 blueEnemies = 1
 slugs = 0

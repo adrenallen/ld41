@@ -32,14 +32,14 @@ func _physics_process(delta):
 		elif(Input.is_action_pressed("ui_right")):
 			velocity.x += moveSpeed
 		else:
-			velocity.x -= velocity.x/10
+			velocity.x -= velocity.x/5
 			
 		if(Input.is_action_pressed("ui_up")):
 			velocity.y -= moveSpeed
 		elif(Input.is_action_pressed("ui_down")):
 			velocity.y += moveSpeed
 		else:
-			velocity.y -= velocity.y/10
+			velocity.y -= velocity.y/5
 			
 		#set a max speed for all directions
 		if(velocity.length() > maxMoveSpeed):

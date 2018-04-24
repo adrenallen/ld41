@@ -139,7 +139,7 @@ tracks/2/keys = {
 "values": [ ExtResource( 8 ) ]
 }
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -463,9 +463,9 @@ _sections_unfolded = [ "Pause" ]
 nextLevel = "level8"
 maxEnemies = 20
 difficulty = 40
-redEnemies = 1
-greenEnemies = 15
-blueEnemies = 1
+redEnemies = 4
+greenEnemies = 10
+blueEnemies = 2
 slugs = 0
 
 [node name="VictoryDoor" type="Sprite" parent="." index="6"]
