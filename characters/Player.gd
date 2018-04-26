@@ -2,6 +2,7 @@ extends "BaseCharacter.gd"
 
 var isCleaning = false
 
+var attackMoveSpeed = 120
 	
 func _ready():
 	moveSpeed = 50
@@ -42,19 +43,29 @@ func _physics_process(delta):
 			velocity.y -= velocity.y/5
 			
 		#set a max speed for all directions
-		if(velocity.length() > maxMoveSpeed):
-			velocity = velocity.normalized()
-			velocity.x *= maxMoveSpeed
-			velocity.y *= maxMoveSpeed
-			
-		move_and_slide(velocity)
+	if(velocity.length() > maxMoveSpeed):
+		velocity = velocity.normalized()
+		velocity.x *= maxMoveSpeed
+		velocity.y *= maxMoveSpeed
+		
+	move_and_slide(velocity)
 	
 	if(Input.is_action_pressed("ui_accept") && !isAttacking):
 		attack()
 		
 	if(Input.is_action_pressed("player_clean") && !isCleaning && !isAttacking):
 		start_clean_tile()
-		
+
+func attack():
+	velocity = Vector2(0,0)
+	if(isFlippedH):
+		velocity.x -= attackMoveSpeed
+	else:
+		velocity.x += attackMoveSpeed
+	toggle_on_is_attacking()
+	global.play_animation_if_not_playing("attack", $AnimationPlayer)
+	$AnimationPlayer.connect("animation_finished", self, "toggle_off_is_attacking", [], CONNECT_ONESHOT)
+
 func take_damage(damage):
 	if !isDead:
 		.take_damage(damage)

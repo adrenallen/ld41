@@ -7,14 +7,14 @@
 
 device = 0
 action = "ui_accept"
-pressed = false
+pressed = true
 
 [sub_resource type="ShortCut" id=2]
 
 shortcut = SubResource( 1 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
